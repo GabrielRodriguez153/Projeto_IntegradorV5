@@ -1,0 +1,45 @@
+body{
+    background-color: #465741;
+}
+
+.container{
+    width: 65vw;
+    height: 80vh;
+    border-radius: 15px;
+    background-color: #fff;
+    margin-left: 15.9rem;
+    margin-top: 4rem;
+}
+
+.sub-container{
+    position: absolute;
+}
+
+.right_panel{
+    width: 32rem;
+    position: relative;
+    right: -30.7rem;
+    height: 35.13rem;
+}
+
+.panel_center{
+    width: 270px;
+    height: 385px;
+    background: #465741;
+    margin-left: 38rem;
+    margin-top: 5.3rem;
+    border-radius: 15px;
+    position: absolute;
+}
+
+.logo_panel{
+    width: 180px;
+    margin-left: 2.75rem;
+    margin-top: 2.5rem;
+}
+
+.sublogo_panel{
+    width: 12rem;
+    margin-left: 2.25rem;
+    margin-top: 3.5rem;
+}
