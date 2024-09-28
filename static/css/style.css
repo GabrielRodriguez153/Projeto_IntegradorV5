@@ -1,14 +1,19 @@
 body{
-    background-color: #465741;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar{
+    display: none;
 }
 
 .container{
-    width: 65vw;
-    height: 80vh;
-    border-radius: 15px;
+    display: flex;
+    justify-content: center;  
+    align-items: center;    
+    width: 45%;
+    height: 99.9vh;
     background-color: #fff;
-    margin-left: 15.9rem;
-    margin-top: 4rem;
 }
 
 .sub-container{
@@ -16,30 +21,45 @@ body{
 }
 
 .right_panel{
-    width: 32rem;
     position: relative;
     right: -30.7rem;
-    height: 35.13rem;
+    width: 152%;       
+    height: 101vh; 
+    z-index: -1;
+    filter: brightness(0.5);
 }
 
 .panel_center{
-    width: 270px;
+    width: 386px;
+    margin-right: -97rem;
     height: 385px;
     background: #465741;
-    margin-left: 38rem;
-    margin-top: 5.3rem;
     border-radius: 15px;
-    position: absolute;
 }
 
 .logo_panel{
-    width: 180px;
-    margin-left: 2.75rem;
+    width: 206px;
+    margin-left: 5.4rem;
     margin-top: 2.5rem;
 }
 
 .sublogo_panel{
-    width: 12rem;
-    margin-left: 2.25rem;
-    margin-top: 3.5rem;
+    width: 15rem;
+    margin-left: 4.25rem;
+    margin-top: 2.5rem;
+}
+
+.titl{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 4em;
+    margin-top: -10em;
+    margin-bottom: 0em;
+    padding-left: .8em;
+}
+
+hr{
+    width: 36em;
+    margin-left: 3em;
 }
