@@ -7,19 +7,61 @@
     <title>AntraVision</title>
 </head>
 <body>
-<div class="container">
+<!-- <div class="container">
     <div class="sub-container">
         <img class="right_panel" src="{{url_for('static', filename='imgs/fundo.png')}}">
     </div>    
-     <!-- <div class="panel_center">
+    <div class="panel_center">
         <img class="logo_panel" src="{{url_for('static', filename='imgs/logo_white.svg')}}">
         <img class="sublogo_panel" src="{{url_for('static', filename='imgs/sub_logo_white.svg')}}">
     </div> -->
-</div>
+<!-- </div>
 
 <div class="forms">
     <h1 class="titl">LOGIN</h1>
     <hr>
-</div>
+    <input type="email" class="inp_email" placeholder="EMAIL">
+    <br>
+    <input type="password" class="inp_senha" placeholder="SENHA">
+    <br>
+    <button class="btn_logar">Logar</button>
+</div> -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1 class="login-title">LOGIN</h1>
+            <hr class="separator-line"> <!-- Linha de separação -->
+            <form>
+                <div class="input-group">
+                    <img src="{{url_for('static', filename='imgs/email-icon.svg')}}" alt="Ícone de email" class="icon">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <img src="{{url_for('static', filename='imgs/lock-icon.svg')}}" alt="Ícone de senha" class="icon">
+                    <input type="password" placeholder="Senha" required>
+                </div>
+                <button type="submit" class="btn-login">LOGAR</button>
+                <p class="register-link">Não possui conta? <a href="#">Cadastre-se</a></p>
+            </form>
+        </div>
+        <div class="image-box">
+            <img src="{{url_for('static', filename='imgs/logo_white.svg')}}" alt="Logo" class="logo">
+            <img src="{{url_for('static', filename='imgs/sub_logo_white.svg')}}" alt="Logo" class="logo">
+        </div>
+    </div>
 </body>
+</html>
+
+</body>
+
+<script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
 </html>
