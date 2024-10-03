@@ -27,15 +27,6 @@
     <button class="btn_logar">Logar</button>
 </div> -->
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Login</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
     <div class="container">
         <div class="login-box">
             <h1 class="login-title">LOGIN</h1>
@@ -49,19 +40,19 @@
                     <img src="{{url_for('static', filename='imgs/lock-icon.svg')}}" alt="Ícone de senha" class="icon">
                     <input type="password" placeholder="Senha" required>
                 </div>
-                <button type="submit" class="btn-login">LOGAR</button>
-                <p class="register-link">Não possui conta? <a href="#">Cadastre-se</a></p>
+                
             </form>
+            <button type="submit" class="btn-login">LOGAR</button>
+            <p class="register-link">Não possui conta? <a href="{{url_for('signup')}}">Cadastre-se</a></p>
         </div>
+
         <div class="image-box">
             <img src="{{url_for('static', filename='imgs/logo_white.svg')}}" alt="Logo" class="logo">
             <img src="{{url_for('static', filename='imgs/sub_logo_white.svg')}}" alt="Logo" class="logo">
         </div>
+ 
     </div>
-</body>
-</html>
 
 </body>
-
 <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
 </html>

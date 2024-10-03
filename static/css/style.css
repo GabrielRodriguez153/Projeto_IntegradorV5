@@ -15,7 +15,9 @@ body {
 
 .container {
     width: 900px;
+    height: 500px;
     display: flex;
+    margin-top: -8px;
     background-color: white;
     border-radius: 15px;
     overflow: hidden;
@@ -31,24 +33,24 @@ body {
 }
 
 .login-title {
-    font-size: 36px;
+    font-size: 42px;
     font-weight: bold;
     margin-bottom: 10px;
-    ;
+    font-style: italic;
 }
 
 .separator-line {
     border: 0;
     border-top: 1px solid #4a5a43;
-    margin-bottom: 30px;
+    margin-bottom: 54px;
 }
 
 .input-group {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    border: 1px solid #4a5a43;
-    border-radius: 5px;
+    border: 3px solid #4a5a43;
+    border-radius: 8px;
     padding: 10px;
 }
 
@@ -61,8 +63,13 @@ input {
     border: none;
     outline: none;
     flex: 1;
-    font-size: 16px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
     padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #4a5a43;
+    height: 27px;
 }
 
 .btn-login {
@@ -75,6 +82,9 @@ input {
     cursor: pointer;
     margin-bottom: 20px;
     width: 100%;
+    margin-top: 39px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 .btn-login:hover {
@@ -84,6 +94,7 @@ input {
 .register-link {
     text-align: center;
     color: #4a5a43;
+    font-weight: bold;
 }
 
 .register-link a {
@@ -93,18 +104,42 @@ input {
 
 .image-box {
     flex: 1;
-    background: url('fundo.png') no-repeat center center;
+    background: url('../imgs/fundo.png') no-repeat center center;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 40px;
+    z-index: 1;
+}
+
+
+.image-box2 {
+    flex: 1;
+    background: url('../imgs/fundo2.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    z-index: 1;
 }
 
 .logo {
-    width: 150px;
-    margin-bottom: 20px;
+    width: 250px;
+    margin-left: -15px;
+    margin-bottom: 25px;
+    margin-top: 31px;
+}
+
+.logo1 {
+    width: 250px;
+    margin-left: -1px;
+    margin-bottom: 25px;
+    margin-right: 6px;
+    margin-top: 31px;
 }
 
 .logo-text {
