@@ -7,51 +7,33 @@
     <title>AntraVision</title>
 </head>
 <body>
-<!-- <div class="container">
-    <div class="sub-container">
-        <img class="right_panel" src="{{url_for('static', filename='imgs/fundo.png')}}">
-    </div>    
-    <div class="panel_center">
-        <img class="logo_panel" src="{{url_for('static', filename='imgs/logo_white.svg')}}">
-        <img class="sublogo_panel" src="{{url_for('static', filename='imgs/sub_logo_white.svg')}}">
-    </div> -->
-<!-- </div>
 
-<div class="forms">
-    <h1 class="titl">LOGIN</h1>
-    <hr>
-    <input type="email" class="inp_email" placeholder="EMAIL">
-    <br>
-    <input type="password" class="inp_senha" placeholder="SENHA">
-    <br>
-    <button class="btn_logar">Logar</button>
-</div> -->
 
-    <div class="container">
-        <div class="login-box">
-            <h1 class="login-title">LOGIN</h1>
-            <hr class="separator-line"> <!-- Linha de separação -->
-            <form>
-                <div class="input-group">
-                    <img src="{{url_for('static', filename='imgs/email-icon.svg')}}" alt="Ícone de email" class="icon">
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <div class="input-group">
-                    <img src="{{url_for('static', filename='imgs/lock-icon.svg')}}" alt="Ícone de senha" class="icon">
-                    <input type="password" placeholder="Senha" required>
-                </div>
-                
-            </form>
-            <button type="submit" class="btn-login">LOGAR</button>
-            <p class="register-link">Não possui conta? <a href="{{url_for('signup')}}">Cadastre-se</a></p>
+<div class="container">
+    <div class="login-section">
+        <h2>LOGIN</h2>
+        <hr>
+        <br>
+        <div class="input-field">
+            <img src="{{url_for('static', filename='imgs/email-icon.svg')}}" alt="Email">
+            <input type="email" placeholder="Email">
         </div>
-
-        <div class="image-box">
-            <img src="{{url_for('static', filename='imgs/logo_white.svg')}}" alt="Logo" class="logo">
-            <img src="{{url_for('static', filename='imgs/sub_logo_white.svg')}}" alt="Logo" class="logo">
+        <div class="input-field">
+            <img src="{{url_for('static', filename='imgs/lock-icon.svg')}}" alt="Senha">
+            <input type="password" placeholder="Senha">
         </div>
- 
+        <button class="login-button">LOGAR</button>
+        <div class="register-link">
+            <p>Não possui conta? <a href="{{url_for('signup')}}">Cadastre-se</a></p>
+        </div>
     </div>
+    <div class="image-section">
+        <div class="logo">
+            <img src="{{url_for('static', filename='imgs/logo_white.svg')}}" alt="Logo ANTVSN" >
+            <img src="{{url_for('static', filename='imgs/sub_logo_white.svg')}}" alt="Logo ANTVSN">
+        </div>
+    </div>
+</div>
 
 </body>
 <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>

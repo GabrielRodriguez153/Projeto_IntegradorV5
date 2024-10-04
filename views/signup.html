@@ -8,14 +8,41 @@
 </head>
 <body>
     <div class="container">
-        <div class="image-box2">
-            <img src="{{url_for('static', filename='imgs/logo_white.svg')}}" alt="Logo" class="logo1">
-            <img src="{{url_for('static', filename='imgs/sub_logo_white.svg')}}" alt="Logo" class="logo1">
+        <div class="image-section2">
+            <div class="logo">
+                <img src="{{url_for('static', filename='imgs/logo_white.svg')}}" alt="Logo ANTVSN">
+                <img src="{{url_for('static', filename='imgs/sub_logo_white.svg')}}" alt="Logo ANTVSN">
+            </div>
         </div>
-        <div class="login-box">
-            <h1 class="login-title">CADASTRO</h1>
-            <hr class="separator-line"> 
+        <div class="login-section">
+            <h2>CADASTRO</h2>
+            <hr>
+            <div class="input-field1">
+                <img src="{{url_for('static', filename='imgs/people-icon.svg')}}" alt="Email">
+                <input type="text" placeholder="Nome">
+            </div>
+            <div class="input-field1">
+                <img src="{{url_for('static', filename='imgs/tel-icon.svg')}}" alt="Email">
+                <input type="text" placeholder="Telefone">
+            </div>
+            <div class="input-field1">
+                <img src="{{url_for('static', filename='imgs/email-icon.svg')}}" alt="Email">
+                <input type="email" placeholder="Email">
+            </div>
+            <div class="input-field1">
+                <img src="{{url_for('static', filename='imgs/lock-icon.svg')}}" alt="Email">
+                <input type="password" placeholder="Senha">
+            </div>
+            <div class="input-field1">
+                <img src="{{url_for('static', filename='imgs/lock-icon.svg')}}" alt="Senha">
+                <input type="password" placeholder="Confirme a Senha">
+            </div>
+            <button class="signup-button">PRÓXIMO</button>
+            <div class="register1-link">
+                <p>Já possui conta? <a href="{{url_for('login')}}">Entre</a></p>
+            </div>
         </div>
+       
     </div>
 </body>
 <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>

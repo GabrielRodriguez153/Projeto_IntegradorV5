@@ -2,261 +2,186 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #4a5a43;
     display: flex;
+    height: 100vh;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    background-color: #4A5943; 
 }
 
 .container {
-    width: 900px;
-    height: 500px;
+    width: 80%;
+    max-width: 1300px;
+    height: 614px;
     display: flex;
-    margin-top: -8px;
-    background-color: white;
-    border-radius: 15px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.login-box {
+.login-section {
     flex: 1;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.login-title {
-    font-size: 42px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-style: italic;
-}
-
-.separator-line {
-    border: 0;
-    border-top: 1px solid #4a5a43;
-    margin-bottom: 54px;
-}
-
-.input-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    border: 3px solid #4a5a43;
-    border-radius: 8px;
-    padding: 10px;
-}
-
-.icon {
-    width: 24px;
-    margin-right: 10px;
-}
-
-input {
-    border: none;
-    outline: none;
-    flex: 1;
-    font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
-    padding: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #4a5a43;
-    height: 27px;
-}
-
-.btn-login {
-    background-color: #4a5a43;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 15px;
-    font-size: 18px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    width: 100%;
-    margin-top: 39px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-}
-
-.btn-login:hover {
-    background-color: #3b4a36;
-}
-
-.register-link {
-    text-align: center;
-    color: #4a5a43;
-    font-weight: bold;
-}
-
-.register-link a {
-    color: #4a5a43;
-    text-decoration: none;
-}
-
-.image-box {
-    flex: 1;
-    background: url('../imgs/fundo.png') no-repeat center center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 40px;
-    z-index: 1;
-}
-
-
-.image-box2 {
-    flex: 1;
-    background: url('../imgs/fundo2.png') no-repeat center center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 40px;
-    z-index: 1;
-}
-
-.logo {
-    width: 250px;
-    margin-left: -15px;
-    margin-bottom: 25px;
-    margin-top: 31px;
-}
-
-.logo1 {
-    width: 250px;
-    margin-left: -1px;
-    margin-bottom: 25px;
-    margin-right: 6px;
-    margin-top: 31px;
-}
-
-.logo-text {
-    font-size: 36px;
-    color: white;
-    font-weight: bold;
-}
-
-
-
-
-/* body{
-    margin: 0;
-    padding: 0;
-}
-
-::-webkit-scrollbar{
-    display: none;
-}
-
-.container{
-    display: flex;
-    justify-content: center;  
-    align-items: center;    
-    width: 45%;
-    height: 99.9vh;
     background-color: #fff;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.right_panel{
-    position: relative;
-    right: -30.7rem;
-    width: 152%;       
-    height: 101vh; 
-    z-index: -1;
-    filter: brightness(0.5);
-}
-
-.panel_center{
-    width: 386px;
-    margin-right: -97rem;
-    height: 385px;
-    background: #465741;
-    border-radius: 15px;
-}
-
-.logo_panel{
-    width: 206px;
-    margin-left: 5.4rem;
-    margin-top: 2.5rem;
-}
-
-.inp_email {
-    height: 2.5rem;
-    margin-top: 2rem;
-    margin-left: 5rem;
-    width: 32%;
-    border: 2px solid #465741;
-    border-radius: 4px;
-    outline: none;
-    font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    padding-left: .5rem;
-}
-
-.btn_logar {
-    margin-left: 5rem;
-    margin-top: 2rem;
-    width: 32.8%;
-    height: 3.6rem;
-    border-radius: 30px;
-    border: none;
-    background-color: #465741;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-}
-
-
-.inp_senha {
-    height: 2.5rem;
-    margin-top: 2rem;
-    margin-left: 5rem;
-    width: 32%;
-    border: 2px solid #465741;
-    border-radius: 4px;
-    outline: none;
-    font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    padding-left: .5rem;
-}
-
-.forms{
-    margin-top: 7rem;
-}
-
-.sublogo_panel{
-    width: 15rem;
-    margin-left: 4.25rem;
-    margin-top: 2.5rem;
-}
-
-.titl{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+.login-section h2 {
+    font-size: 47px;
+    font-weight: bolder;
     font-style: italic;
-    font-size: 4em;
-    margin-top: -10em;
-    margin-bottom: 0em;
-    padding-left: .8em;
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 31px;
+    border: 3px solid #4A5943;
+    border-radius: 5px;
+    padding: 10px;
+    height: 58px;
+}
+
+.input-field1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 3px solid #4A5943;
+    border-radius: 5px;
+    padding: 10px;
+    height: 58px;
 }
 
 hr{
-    width: 36em;
-    margin-left: 3em;
-} */
+    margin-bottom: 48px;
+}
+
+.input-field input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #4A5943;
+}
+
+.input-field1 input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #4A5943;
+}
+
+.input-field img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4A5943;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    font-weight: bold;
+    height: 60px;
+    margin-top: 50px;
+}
+
+
+.signup-button {
+    width: 42%;
+    padding: 15px;
+    background-color: #4A5943;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    font-weight: bold;
+    height: 60px;
+    margin-top: 23px;
+    margin-left: 330px;
+}
+
+.login-button:hover {
+    background-color: #374531;
+    transition: all .5s;
+}
+
+.register-link {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.register-link a {
+    text-decoration: none;
+    color: #4A5943;
+}
+
+.register1-link {
+    margin-top: 10px;
+    text-align: right;
+    margin-right: 34px;
+    font-size: 14px;
+}
+
+.register1-link a {
+    text-decoration: none;
+    color: #4A5943;
+}
+
+.image-section {
+    flex: 1;
+    background: url("../imgs/fundo.png") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-section2 {
+    flex: 1;
+    background: url("../imgs/fundo2.png") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 325px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.logo img {
+    width: 280px;
+    margin-bottom: 38px;
+    margin-top: 23px;
+}
+
+.logo p {
+    margin-top: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
