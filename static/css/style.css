@@ -18,7 +18,7 @@ body {
     max-width: 1300px;
     height: 614px;
     display: flex;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
     background: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -59,6 +59,31 @@ body {
     height: 58px;
 }
 
+.input-field2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 11px;
+    border: 3px solid #4A5943;
+    border-radius: 5px;
+    padding: 10px;
+    height: 58px;
+    width: 276px;
+}
+
+.input-field21 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
+    margin-top: -69px;
+    border: 3px solid #4A5943;
+    border-radius: 5px;
+    padding: 10px;
+    height: 58px;
+    width: 276px;
+    align-self: flex-end;
+}
+
+
 hr{
     margin-bottom: 48px;
 }
@@ -85,6 +110,29 @@ hr{
     color: #4A5943;
 }
 
+.input-field2 input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #4A5943;
+}
+
+.input-field21 input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #4A5943;
+
+}
+
 .input-field img {
     width: 30px;
     margin-right: 10px;
@@ -106,7 +154,7 @@ hr{
 
 
 .signup-button {
-    width: 42%;
+    width: 100%;
     padding: 15px;
     background-color: #4A5943;
     color: white;
@@ -117,7 +165,6 @@ hr{
     font-weight: bold;
     height: 60px;
     margin-top: 23px;
-    margin-left: 330px;
 }
 
 .login-button:hover {
