@@ -37,6 +37,7 @@ body {
     font-size: 47px;
     font-weight: bolder;
     font-style: italic;
+    color: black;
 }
 
 .input-field {
@@ -83,12 +84,49 @@ body {
     align-self: flex-end;
 }
 
+.input-field3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 31px;
+    border: 3px solid #4A5943;
+    border-radius: 5px;
+    padding: 10px;
+    height: 58px;
+}
+
+
 
 hr{
     margin-bottom: 48px;
 }
 
 .input-field input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #4A5943;
+}
+
+.input-field3 input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #4A5943;
+}
+
+.ico{
+    width: 20px;
+}
+
+.input-field3 select {
     border: none;
     outline: none;
     padding: 10px;
@@ -130,10 +168,14 @@ hr{
     text-transform: uppercase;
     font-weight: bold;
     color: #4A5943;
-
 }
 
 .input-field img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.input-field3 img {
     width: 30px;
     margin-right: 10px;
 }

@@ -9,3 +9,7 @@ def init_app(app):
     @app.route('/signup')
     def signup():
         return render_template('signup.html')
+    
+    @app.route('/signup2')
+    def signup2():
+        return render_template('signup2.html')

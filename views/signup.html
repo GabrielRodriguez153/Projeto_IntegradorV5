@@ -15,8 +15,8 @@
             </div>
         </div>
         <div class="login-section">
-            <!-- <a href="{{url_for('login')}}"><i class="fa-solid fa-arrow-left fa-lg" style="color: black;"></i></a> -->
-            <h2> CADASTRO</h2>
+            <a href="{{url_for('login')}}"><img class="ico" src="{{url_for('static', filename='imgs/arrow-icon.svg')}}"></a>
+            <h2>CADASTRO</h2>
             <hr>
             <div class="input-field1">
                 <img src="{{url_for('static', filename='imgs/people-icon.svg')}}" alt="Email">
@@ -38,10 +38,7 @@
                 <img src="{{url_for('static', filename='imgs/lock-icon.svg')}}" alt="Senha">
                 <input type="password" placeholder="Confirme a Senha">
             </div>
-            <button class="signup-button">PRÓXIMO</button>
-            <!-- <div class="register1-link">
-                <p>Já possi conta? <a href="{{url_for('login')}}">Entre</a></p>u
-            </div> -->
+            <button class="signup-button"><a href="{{url_for('signup2')}}">PRÓXIMO</a></button>
         </div>
        
     </div>
