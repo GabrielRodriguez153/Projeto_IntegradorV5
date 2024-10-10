@@ -87,11 +87,11 @@ body {
 .input-field3 {
     display: flex;
     align-items: center;
-    margin-bottom: 31px;
+    margin-bottom: 19px;
     border: 3px solid #4A5943;
     border-radius: 5px;
     padding: 10px;
-    height: 58px;
+    height: 56px;
 }
 
 
@@ -124,6 +124,44 @@ hr{
 
 .ico{
     width: 20px;
+    margin-left: 34rem;
+    margin-top: -9rem;
+}
+
+.next{
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+.menu{
+    background-color: #fff;
+    width: 20%;
+    height: 701px;
+    margin-left: -76.7rem;
+    position: absolute;
+}
+
+.log{
+    margin-left: 14.9%;
+    margin-top: 8%;
+    margin-bottom: 6%;
+}
+
+.first_text{
+    color: #fff;
+    margin-right: 42rem;
+    position: absolute;
+    margin-top: -37rem;
+    text-transform: uppercase
+}
+
+.welcome{
+    color: #fff;
+    margin-left: -39.4rem;
+    position: relative;
+    text-transform: uppercase;
+    margin-top: -33rem;
 }
 
 .input-field3 select {

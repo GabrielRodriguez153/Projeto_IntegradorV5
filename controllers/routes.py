@@ -2,7 +2,7 @@ from flask import render_template, request, url_for, redirect
 
 def init_app(app):
     
-    @app.route('/')
+    @app.route('/login')
     def login():
         return render_template('login.html')
     
@@ -13,3 +13,7 @@ def init_app(app):
     @app.route('/signup2')
     def signup2():
         return render_template('signup2.html')
+    
+    @app.route('/main')
+    def main():
+        return render_template('main.html')
