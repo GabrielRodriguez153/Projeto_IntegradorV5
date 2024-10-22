@@ -164,6 +164,12 @@ hr{
     margin-top: -33rem;
 }
 
+.line{
+    width: 20px;
+    height: 2px;
+    background: #000;
+}
+
 .input-field3 select {
     border: none;
     outline: none;
