@@ -20,7 +20,7 @@ if __name__ == '__main__':
                 plan = '',
                 proprietario = '',
                 telefone = '',
-                dt_analise = bson_datetime.datetime.utcnow(),
+                dt_analise = '',
                 doenca = '',
                 observacao = '' 
             )
