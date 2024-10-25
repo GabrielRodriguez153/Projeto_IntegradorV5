@@ -13,3 +13,5 @@ mongo = PyMongo(app)
 
 ma = Marshmallow(app)
 
+from .resources import antravision_resources
+
