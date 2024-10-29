@@ -20,6 +20,6 @@ class DadosSchema(ma.Schema):
     plan = fields.Str(required=True)
     proprietario = fields.Str(required=True)
     telefone = fields.Str(required=True)
-    dt_analise = fields.Date(required=True)
+    dt_analise = fields.Str(required=True)
     doenca = fields.Str(required=True)
     observacao = fields.Str(required=True)    

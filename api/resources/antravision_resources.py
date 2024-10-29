@@ -82,12 +82,14 @@ class DadosDetails(Resource):
         dado_bd = DadosService.get_dado_by_id(id)
         if dado_bd is None:
             return make_response(jsonify("Dados não Encontrados"), 404)
-        dadoschema = antravision_schemas.DadosSchemas()
+        dadoschema = antravision_schemas.DadosSchema()
         validate = dadoschema.validate(request.json)
         if validate:
             return make_response(jsonify(validate), 400)
         else:
             json_data = request.get_json()
+            if '_id' in json_data:
+                del json_data['_id']
             new_dado = antravision_model.Dados(**json_data)
             updated_dado = DadosService.update_dado(new_dado,id)
             return make_response(dadoschema.jsonify(updated_dado), 200)
