@@ -164,10 +164,16 @@ hr{
     margin-top: -33rem;
 }
 
+.text_nav{
+    font-size: 20px;
+}
+
 .line{
-    width: 20px;
+    width: 250px;
+    margin-left: 27px;
     height: 2px;
-    background: #000;
+    background: #4A5943;
+    filter: opacity(0.3);
 }
 
 .input-field3 select {
