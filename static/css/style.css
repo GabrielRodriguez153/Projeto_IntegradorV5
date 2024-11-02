@@ -84,6 +84,12 @@ body {
     align-self: flex-end;
 }
 
+#lineChart, #barChart {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
 .input-field3 {
     display: flex;
     align-items: center;
@@ -159,13 +165,78 @@ hr{
 .welcome{
     color: #fff;
     margin-left: -39.4rem;
-    position: relative;
+    position: absolute;
     text-transform: uppercase;
     margin-top: -33rem;
 }
 
-.text_nav{
+.btn{
+    margin-top: 60px;
+    padding: 20px;
+    margin-left: 52px;
+    margin-right: 32px;
+    cursor: pointer;
+    border-radius: 70px;
     font-size: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #4A5943;
+    border: none;
+    background-color: transparent;
+}
+
+
+.btn2{
+    margin-top: 60px;
+    padding: 20px;
+    margin-left: 77px;
+    margin-right: 32px;
+    cursor: pointer;
+    border-radius: 70px;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #4A5943;
+    border: none;
+    background-color: transparent;
+}
+
+
+.icon-size{
+    width: 20px;
+    margin-right: 20px;
+}
+
+
+.btn:hover{
+    background-color: #374531;
+    color: #fff;
+    transition: ease-in-out .5s;
+}
+
+.main-container{
+    width: 50%;
+    height: 306px;
+    margin-left: -81px;
+    margin-top: -9rem;
+    background-color: #fff;
+}
+
+.btn2:hover{
+    background-color: #374531;
+    color: white;
+    transition: all .5s;
+}
+
+.signo{
+    text-align: center;
+    margin-top: 250px;
 }
 
 .line{
