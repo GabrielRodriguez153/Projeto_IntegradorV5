@@ -17,3 +17,7 @@ def init_app(app):
     @app.route('/main')
     def main():
         return render_template('main.html')
+
+    @app.route('/history')
+    def history():
+        return render_template('history.html')

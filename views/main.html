@@ -3,63 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/dash.css')}}">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css">
     <title>AntraVision</title>
 </head>
 <body>
-    <nav class="menu">
-        <img class="log" src="{{url_for('static', filename='imgs/logo.svg')}}">
-        <div class="line"></div>
-        <button class="btn"><img class="icon-size" src="{{url_for('static', filename='imgs/dashboard-icon.svg')}}">Dashboard</button>
-        <button class="btn2"><img class="icon-size" src="{{url_for('static', filename='imgs/user-icon.svg')}}">Perfil</button>
-        <!-- <button class="signo"><img class="icon-size" src="{{url_for('static', filename='imgs/logout-icon.svg')}}">Sair</button> -->
-    </nav>
-    <p class="first_text">Olá, XXXXXXX XXXXXX</p>
-    <h2 class="welcome">Seja Bem-Vindo</h2>
-
-        <!-- Div para o gráfico de linhas -->
-        <div id="lineChart"></div>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="{{url_for('static', filename='imgs/logo-white2.svg')}}">
+            <div class="line"></div>
+            <ul>
+                <li><a href="{{url_for('main')}}" id="dashboardLink"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                <li><a href="{{url_for('history')}}" id="relatorioLink"><i class="fa-solid fa-file-lines"></i> Históricos</a></li>
+                <li><a href="#" id="profileLink"><i class="fa-solid fa-user"></i> Perfil</a></li>
+            </ul>
+        </aside>
         
-        <!-- Div para o gráfico de barras -->
-        <div id="barChart"></div>
-    
-    
+        <main class="main-content">
+            <p class="first_text">Olá, XXXXXXX XXXXXX</p>
+            <h2 class="welcome">Seja Bem-Vindo ao AntraVision</h2>
+
+            <div class="sub-content">
+                <div class="info"></div>
+                <div class="info"></div>
+                <div class="info"></div>
+            </div>
+
+            <div id="chart"></div>
+
+    <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
+
 </body>
-<script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
-<script>
-    // Gráfico de Linhas
-    var lineData = [{
-        x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-        y: [0, Math.sin(1), Math.sin(2), Math.sin(3), Math.sin(4), Math.sin(5), Math.sin(6), Math.sin(7), Math.sin(8), Math.sin(9), Math.sin(10)],
-        type: 'scatter',
-        mode: 'lines+markers',
-        name: 'Seno',
-        line: {color: 'blue'},
-    }];
-
-    var lineLayout = {
-        title: 'Gráfico de Linhas: Seno',
-        xaxis: {title: 'Eixo X'},
-        yaxis: {title: 'Eixo Y'},
-    };
-
-    Plotly.newPlot('lineChart', lineData, lineLayout);
-
-    // Gráfico de Barras
-    var barData = [{
-        x: ['A', 'B', 'C', 'D', 'E'],
-        y: [3, 7, 5, 9, 6],
-        type: 'bar',
-        marker: {color: 'orange'},
-    }];
-
-    var barLayout = {
-        title: 'Gráfico de Barras',
-        xaxis: {title: 'Categorias'},
-        yaxis: {title: 'Valores'},
-    };
-
-    Plotly.newPlot('barChart', barData, barLayout);
-</script>
 </html>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -140,86 +142,6 @@ hr{
     text-decoration: none;
 }
 
-.menu{
-    background-color: #fff;
-    width: 20%;
-    height: 701px;
-    margin-left: -76.7rem;
-    position: absolute;
-}
-
-.log{
-    margin-left: 14.9%;
-    margin-top: 8%;
-    margin-bottom: 6%;
-}
-
-.first_text{
-    color: #fff;
-    margin-right: 42rem;
-    position: absolute;
-    margin-top: -37rem;
-    text-transform: uppercase
-}
-
-.welcome{
-    color: #fff;
-    margin-left: -39.4rem;
-    position: absolute;
-    text-transform: uppercase;
-    margin-top: -33rem;
-}
-
-.btn{
-    margin-top: 60px;
-    padding: 20px;
-    margin-left: 52px;
-    margin-right: 32px;
-    cursor: pointer;
-    border-radius: 70px;
-    font-size: 20px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    color: #4A5943;
-    border: none;
-    background-color: transparent;
-}
-
-
-.btn2{
-    margin-top: 60px;
-    padding: 20px;
-    margin-left: 77px;
-    margin-right: 32px;
-    cursor: pointer;
-    border-radius: 70px;
-    font-size: 20px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    color: #4A5943;
-    border: none;
-    background-color: transparent;
-}
-
-
-.icon-size{
-    width: 20px;
-    margin-right: 20px;
-}
-
-
-.btn:hover{
-    background-color: #374531;
-    color: #fff;
-    transition: ease-in-out .5s;
-}
-
 .main-container{
     width: 50%;
     height: 306px;
@@ -228,24 +150,7 @@ hr{
     background-color: #fff;
 }
 
-.btn2:hover{
-    background-color: #374531;
-    color: white;
-    transition: all .5s;
-}
 
-.signo{
-    text-align: center;
-    margin-top: 250px;
-}
-
-.line{
-    width: 250px;
-    margin-left: 27px;
-    height: 2px;
-    background: #4A5943;
-    filter: opacity(0.3);
-}
 
 .input-field3 select {
     border: none;

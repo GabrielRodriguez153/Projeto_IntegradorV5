@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/history.css')}}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css">
+    <title>AntraVision</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="{{url_for('static', filename='imgs/logo-white2.svg')}}">
+            <div class="line"></div>
+            <ul>
+                <li><a href="{{url_for('main')}}" id="dashboardLink"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                <li><a href="{{url_for('history')}}" id="relatorioLink"><i class="fa-solid fa-file-lines"></i> Históricos</a></li>
+                <li><a href="#" id="profileLink"><i class="fa-solid fa-user"></i> Perfil</a></li>
+            </ul>
+        </aside>
+        <div class="main-history">
+        <h1>Histórico de Detecções</h1>
+        
+        <div class="filters">
+            <label>Data Inicial: <input type="date" id="startDate"></label>
+            <label>Data Final: <input type="date" id="endDate"></label>
+            <label>Localização:
+                <select id="location">
+                    <option value="">Todas</option>
+                    <option value="Fazenda A">Fazenda A</option>
+                    <option value="Fazenda B">Fazenda B</option>
+                </select>
+            </label>
+            <button class="filter-button"><i class="fa-solid fa-filter"></i> Filtrar</button>
+            <button class="download-button"><i class="fa-solid fa-download"></i> Baixar Históricos</button>
+        </div>
+    </div>
+
+        <!-- <table id="detectionsTable">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Localização</th>
+                    <th>Severidade</th>
+                    <th>Detalhes</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table> -->
+    </div>
+    </div>    
+    <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
+    
