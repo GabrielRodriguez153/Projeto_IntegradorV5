@@ -16,11 +16,11 @@
             <ul>
                 <li><a href="{{url_for('main')}}" id="dashboardLink"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
                 <li><a href="{{url_for('history')}}" id="relatorioLink"><i class="fa-solid fa-file-lines"></i> Históricos</a></li>
-                <li><a href="#" id="profileLink"><i class="fa-solid fa-user"></i> Perfil</a></li>
+                <li><a href="{{url_for('perfil')}}" id="profileLink"><i class="fa-solid fa-user"></i> Perfil</a></li>
             </ul>
         </aside>
         <div class="main-history">
-        <h1>Histórico de Detecções</h1>
+        <h1 class="titl">Histórico de Detecções</h1>
         
         <div class="filters">
             <label>Data Inicial: <input type="date" id="startDate"></label>

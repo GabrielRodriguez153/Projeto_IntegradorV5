@@ -21,3 +21,7 @@ def init_app(app):
     @app.route('/history')
     def history():
         return render_template('history.html')
+    
+    @app.route('/perfil')
+    def perfil():
+        return render_template('perfil.html')
