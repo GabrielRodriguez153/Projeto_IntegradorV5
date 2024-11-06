@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="login-section">
-            <!-- <a href="{{url_for('signup')}}"><img class="ico" src="{{url_for('static', filename='imgs/x-icon.svg')}}"></a> -->
+            <a href="{{url_for('login')}}" class="close"><i class="fa-solid fa-xmark fa-2xl"></i></a>
             <h2>CADASTRO</h2>
             <hr>
             <div class="input-field3">
@@ -60,7 +60,7 @@
             </div>
             <div class="input-field3">
                 <img src="{{url_for('static', filename='imgs/location-icon.svg')}}" alt="Email">
-                <input type="text" placeholder="CEP">
+                <input type="text" pattern="\d{5}-\d{3}" placeholder="CEP">
             </div>
             <a href="{{url_for('main')}}"><button class="signup-button">CADASTRAR</button></a>
            

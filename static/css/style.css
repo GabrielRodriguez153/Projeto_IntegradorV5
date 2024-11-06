@@ -50,6 +50,7 @@ body {
     border-radius: 5px;
     padding: 10px;
     height: 58px;
+    margin-top: 20px;
 }
 
 .input-field1 {
@@ -130,10 +131,17 @@ hr{
     color: #4A5943;
 }
 
-.ico{
+.close i{
     width: 20px;
     margin-left: 34rem;
     margin-top: -9rem;
+    color: #374531;
+}
+
+.close i:hover{
+    color: #7e9374;
+    transform: scale(1.1);
+    transition: all .5s;
 }
 
 .next{
@@ -207,7 +215,7 @@ hr{
 }
 
 .login-button {
-    width: 100%;
+    width: 90%;
     padding: 15px;
     background-color: #4A5943;
     color: white;
@@ -217,7 +225,8 @@ hr{
     cursor: pointer;
     font-weight: bold;
     height: 60px;
-    margin-top: 50px;
+    margin-top: 31px;
+    margin-left: 26px;
 }
 
 
@@ -235,20 +244,35 @@ hr{
     margin-top: 23px;
 }
 
+
+.signup-button:hover{
+    background-color: #7e9374;
+    transform: scale(1.1);
+    transition: all .5s;
+}
+
 .login-button:hover {
-    background-color: #374531;
+    background-color: #7e9374;
+    transform: scale(1.1);
     transition: all .5s;
 }
 
 .register-link {
     margin-top: 10px;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .register-link a {
     text-decoration: none;
     color: #4A5943;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.register-link a:hover{
+    color: #69835e;
+    transition: all .5s;
 }
 
 .register1-link {
