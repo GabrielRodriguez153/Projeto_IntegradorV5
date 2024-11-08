@@ -7,11 +7,6 @@
       rel="stylesheet"
       href="{{url_for('static', filename='css/perfil.css')}}"
     />
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css"
-    />
     <title>AntraVision</title>
   </head>
   <body>
@@ -50,43 +45,78 @@
         </div>
         <div class="stats">
           <h2 class="stats_title">Meus Dados</h2>
-          <fieldset class="personal-stats">
-            <legend class="personal_leg">Dados Pessoais</legend>
-            <label for="nome">Nome</label>
-            <input
-              type="text"
-              id="nome"
-              name="nome"
-              placeholder="Nome"
-            />
-
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-            />
-
-            <label for="telefone">Telefone</label>
-            <input
-              type="tel"
-              id="telefone"
-              name="telefone"
-              placeholder="Telefone"
-            />
-
-            <label for="senha">Senha</label>
-            <input
-              type="password"
-              id="senha"
-              name="senha"
-              placeholder="Senha"
-            />
+          <fieldset class="personal">
+            <legend>Dados Pessoais</legend>
+        
+            <label>Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+        
+            <label>Email</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu email">
+        
+            <div class="row">
+              <div class="column">
+                  <label>Telefone</label>
+                  <input type="text" id="phone" placeholder="Digite seu telefone">
+              </div>
+              <div class="column">
+                  <label>Senha</label>
+                  <input type="password" id="password" placeholder="Digite sua senha">
+              </div>
+          </div>
+      
           </fieldset>
-          <fieldset class="location-stats">
-            <legend class="location_leg">Dados de Localidade</legend>
+
+          <fieldset class="local">
+            <legend>Dados de Localização</legend>
+        
+            <label>Endereço</label>
+            <input type="text" id="endereco" name="endereco" placeholder="Digite seu Endereço">
+        
+            <label>Cidade</label>
+            <input type="text" id="cidade" name="cidade" placeholder="Digite sua Cidade">
+        
+            <div class="row">
+              <div class="column">
+                  <label>Estado</label>
+                  <select>
+                    <option value="">Estado</option>
+                    <option value="Acre (AC)">Acre (AC)</option>
+                    <option value="Alagoas (AL)">Alagoas (AL)</option>
+                    <option value="Amapá (AP)">Amapá (AP)</option>
+                    <option value="Amazonas (AM)">Amazonas (AM)</option>
+                    <option value="Bahia (BA)">Bahia (BA)</option>
+                    <option value="Ceará (CE)">Ceará (CE)</option>
+                    <option value="Distrito Federal (DF)">Distrito Federal (DF)</option>
+                    <option value="Espírito Santo (ES)">Espírito Santo (ES)</option>
+                    <option value="Goiás (GO)">Goiás (GO)</option>
+                    <option value="Maranhão (MA)">Maranhão (MA)</option>
+                    <option value="Mato Grosso (MT)">Mato Grosso (MT)</option>
+                    <option value="Mato Grosso do Sul (MS)">Mato Grosso do Sul (MS)</option>
+                    <option value="Minas Gerais (MG)">Minas Gerais (MG)</option>
+                    <option value="Pará (PA)">Pará (PA)</option>
+                    <option value="Paraíba (PB)">Paraíba (PB)</option>
+                    <option value="Paraná (PR)">Paraná (PR)</option>
+                    <option value="Pernambuco (PE)">Pernambuco (PE)</option>
+                    <option value="Piauí (PI)">Piauí (PI)</option>
+                    <option value="Rio de Janeiro (RJ)">Rio de Janeiro (RJ)</option>
+                    <option value="Rio Grande do Norte (RN)">Rio Grande do Norte (RN)</option>
+                    <option value="Rio Grande do Sul (RS)">Rio Grande do Sul (RS)</option>
+                    <option value="Rondônia (RO)">Rondônia (RO)</option>
+                    <option value="Roraima (RR)">Roraima (RR)</option>
+                    <option value="Santa Catarina (SC)">Santa Catarina (SC)</option>
+                    <option value="São Paulo (SP)">São Paulo (SP)</option>
+                    <option value="Sergipe (SE)">Sergipe (SE)</option>
+                    <option value="Tocantins (TO)">Tocantins (TO)</option>
+                </select>
+              </div>
+              <div class="column">
+                  <label>CEP</label>
+                  <input type="text" id="cep" placeholder="Digite seu CEP">
+              </div>
+          </div>
           </fieldset>
+           <button type="submit" class="submit-button">Salvar</button>
         </div>
       </div>
     </div>
@@ -94,5 +124,6 @@
       src="https://kit.fontawesome.com/e25d89dd27.js"
       crossorigin="anonymous"
     ></script>
+  
   </body>
 </html>

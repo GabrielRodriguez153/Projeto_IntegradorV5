@@ -83,7 +83,7 @@ body {
     border-radius: 5px;
     padding: 10px;
     height: 58px;
-    width: 276px;
+    width: 311px;
     align-self: flex-end;
 }
 
@@ -217,7 +217,7 @@ hr{
 .login-button {
     width: 90%;
     padding: 15px;
-    background-color: #4A5943;
+    background-color: #1A5319;
     color: white;
     font-size: 18px;
     border: none;
@@ -233,7 +233,7 @@ hr{
 .signup-button {
     width: 100%;
     padding: 15px;
-    background-color: #4A5943;
+    background-color: #1A5319;
     color: white;
     font-size: 18px;
     border: none;
@@ -246,15 +246,17 @@ hr{
 
 
 .signup-button:hover{
-    background-color: #7e9374;
+    background-color: #C4DAD2;
     transform: scale(1.1);
     transition: all .5s;
+    color: #374531;
 }
 
 .login-button:hover {
-    background-color: #7e9374;
+    background-color: #C4DAD2;
     transform: scale(1.1);
     transition: all .5s;
+    color: #374531;
 }
 
 .register-link {
