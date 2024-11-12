@@ -138,7 +138,7 @@ body {
 
 .filters {
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   background-color: #ffffff;

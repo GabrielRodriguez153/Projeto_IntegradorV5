@@ -33,90 +33,135 @@
         </ul>
       </aside>
       <div class="main-perfil">
-        <div class="cont-photo">
-          <div class="photo"></div>
-          <div class="camera">
-            <i class="fa-solid fa-camera fa-2xl"></i>
-          </div>
-          <h2 class="username">XXXXXX</h2>
-          <button class="logout">
-            <i class="fa-solid fa-arrow-right-from-bracket"></i> Sair
-          </button>
-        </div>
         <div class="stats">
-          <h2 class="stats_title">Meus Dados</h2>
+          <div class="header">
+            <div class="mini-photo" onclick="document.getElementById('upload').click()">
+              <input type="file" id="upload" accept="image/*" onchange="loadFile(event)" hidden />
+              <label for="upload" class="upload-label">+</label>
+            </div>
+            <h2 class="stats_title">Meus Dados</h2>
+            <div class="buttons">
+              <button type="submit" class="submit-button">
+                <i class="fa-solid fa-save"></i> &nbsp;Salvar
+              </button>
+              <button type="submit" class="logout-button">
+                <i class="fa-solid fa-right-from-bracket"></i> &nbsp;Sair
+              </button>
+            </div>
+          </div>
+
           <fieldset class="personal">
             <legend>Dados Pessoais</legend>
-        
+
             <label>Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
-        
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Digite seu nome"
+            />
+
             <label>Email</label>
-            <input type="email" id="email" name="email" placeholder="Digite seu email">
-        
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Digite seu email"
+            />
+
             <div class="row">
               <div class="column">
-                  <label>Telefone</label>
-                  <input type="text" id="phone" placeholder="Digite seu telefone">
+                <label>Telefone</label>
+                <input
+                  type="text"
+                  id="phone"
+                  placeholder="Digite seu telefone"
+                />
               </div>
               <div class="column">
-                  <label>Senha</label>
-                  <input type="password" id="password" placeholder="Digite sua senha">
+                <label>Senha</label>
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Digite sua senha"
+                />
               </div>
-          </div>
-      
+            </div>
           </fieldset>
 
           <fieldset class="local">
             <legend>Dados de Localização</legend>
-        
+
             <label>Endereço</label>
-            <input type="text" id="endereco" name="endereco" placeholder="Digite seu Endereço">
-        
+            <input
+              type="text"
+              id="endereco"
+              name="endereco"
+              placeholder="Digite seu Endereço"
+            />
+
             <label>Cidade</label>
-            <input type="text" id="cidade" name="cidade" placeholder="Digite sua Cidade">
-        
+            <input
+              type="text"
+              id="cidade"
+              name="cidade"
+              placeholder="Digite sua Cidade"
+            />
+
             <div class="row">
               <div class="column">
-                  <label>Estado</label>
-                  <select>
-                    <option value="">Estado</option>
-                    <option value="Acre (AC)">Acre (AC)</option>
-                    <option value="Alagoas (AL)">Alagoas (AL)</option>
-                    <option value="Amapá (AP)">Amapá (AP)</option>
-                    <option value="Amazonas (AM)">Amazonas (AM)</option>
-                    <option value="Bahia (BA)">Bahia (BA)</option>
-                    <option value="Ceará (CE)">Ceará (CE)</option>
-                    <option value="Distrito Federal (DF)">Distrito Federal (DF)</option>
-                    <option value="Espírito Santo (ES)">Espírito Santo (ES)</option>
-                    <option value="Goiás (GO)">Goiás (GO)</option>
-                    <option value="Maranhão (MA)">Maranhão (MA)</option>
-                    <option value="Mato Grosso (MT)">Mato Grosso (MT)</option>
-                    <option value="Mato Grosso do Sul (MS)">Mato Grosso do Sul (MS)</option>
-                    <option value="Minas Gerais (MG)">Minas Gerais (MG)</option>
-                    <option value="Pará (PA)">Pará (PA)</option>
-                    <option value="Paraíba (PB)">Paraíba (PB)</option>
-                    <option value="Paraná (PR)">Paraná (PR)</option>
-                    <option value="Pernambuco (PE)">Pernambuco (PE)</option>
-                    <option value="Piauí (PI)">Piauí (PI)</option>
-                    <option value="Rio de Janeiro (RJ)">Rio de Janeiro (RJ)</option>
-                    <option value="Rio Grande do Norte (RN)">Rio Grande do Norte (RN)</option>
-                    <option value="Rio Grande do Sul (RS)">Rio Grande do Sul (RS)</option>
-                    <option value="Rondônia (RO)">Rondônia (RO)</option>
-                    <option value="Roraima (RR)">Roraima (RR)</option>
-                    <option value="Santa Catarina (SC)">Santa Catarina (SC)</option>
-                    <option value="São Paulo (SP)">São Paulo (SP)</option>
-                    <option value="Sergipe (SE)">Sergipe (SE)</option>
-                    <option value="Tocantins (TO)">Tocantins (TO)</option>
+                <label>Estado</label>
+                <select>
+                  <option value="">Estado</option>
+                  <option value="Acre (AC)">Acre (AC)</option>
+                  <option value="Alagoas (AL)">Alagoas (AL)</option>
+                  <option value="Amapá (AP)">Amapá (AP)</option>
+                  <option value="Amazonas (AM)">Amazonas (AM)</option>
+                  <option value="Bahia (BA)">Bahia (BA)</option>
+                  <option value="Ceará (CE)">Ceará (CE)</option>
+                  <option value="Distrito Federal (DF)">
+                    Distrito Federal (DF)
+                  </option>
+                  <option value="Espírito Santo (ES)">
+                    Espírito Santo (ES)
+                  </option>
+                  <option value="Goiás (GO)">Goiás (GO)</option>
+                  <option value="Maranhão (MA)">Maranhão (MA)</option>
+                  <option value="Mato Grosso (MT)">Mato Grosso (MT)</option>
+                  <option value="Mato Grosso do Sul (MS)">
+                    Mato Grosso do Sul (MS)
+                  </option>
+                  <option value="Minas Gerais (MG)">Minas Gerais (MG)</option>
+                  <option value="Pará (PA)">Pará (PA)</option>
+                  <option value="Paraíba (PB)">Paraíba (PB)</option>
+                  <option value="Paraná (PR)">Paraná (PR)</option>
+                  <option value="Pernambuco (PE)">Pernambuco (PE)</option>
+                  <option value="Piauí (PI)">Piauí (PI)</option>
+                  <option value="Rio de Janeiro (RJ)">
+                    Rio de Janeiro (RJ)
+                  </option>
+                  <option value="Rio Grande do Norte (RN)">
+                    Rio Grande do Norte (RN)
+                  </option>
+                  <option value="Rio Grande do Sul (RS)">
+                    Rio Grande do Sul (RS)
+                  </option>
+                  <option value="Rondônia (RO)">Rondônia (RO)</option>
+                  <option value="Roraima (RR)">Roraima (RR)</option>
+                  <option value="Santa Catarina (SC)">
+                    Santa Catarina (SC)
+                  </option>
+                  <option value="São Paulo (SP)">São Paulo (SP)</option>
+                  <option value="Sergipe (SE)">Sergipe (SE)</option>
+                  <option value="Tocantins (TO)">Tocantins (TO)</option>
                 </select>
               </div>
               <div class="column">
-                  <label>CEP</label>
-                  <input type="text" id="cep" placeholder="Digite seu CEP">
+                <label>CEP</label>
+                <input type="text" id="cep" placeholder="Digite seu CEP" />
               </div>
-          </div>
+            </div>
           </fieldset>
-           <button type="submit" class="submit-button">Salvar</button>
         </div>
       </div>
     </div>
@@ -124,6 +169,6 @@
       src="https://kit.fontawesome.com/e25d89dd27.js"
       crossorigin="anonymous"
     ></script>
-  
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
   </body>
 </html>
