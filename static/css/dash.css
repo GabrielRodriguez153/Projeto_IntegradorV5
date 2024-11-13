@@ -31,6 +31,11 @@ body {
   margin-bottom: 1.5rem;
 }
 
+h1 {
+  font-size: 49px;
+  padding-left: 7rem;
+}
+
 .main-content p {
   font-size: 16px;
   color: #1A5319;
@@ -80,7 +85,7 @@ body {
 }
 
 #chart {
-  width: 100%;
+  width: 200px;
   height: 395px;
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
@@ -105,6 +110,11 @@ body {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info h4{
+  font-size: 17px;
+  padding: 20px;
 }
 
 .sidebar ul li a {

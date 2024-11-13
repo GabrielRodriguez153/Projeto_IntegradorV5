@@ -33,22 +33,51 @@
                 </select>
             </label>
             <button class="filter-button"><i class="fa-solid fa-filter"></i> Filtrar</button>
-            <button class="download-button"><i class="fa-solid fa-download"></i> Baixar Históricos</button>
+            <button class="download-button"><i class="fa-solid fa-download"></i>Baixar</button>
         </div>
+        <div class="historico-container">
+            <table class="table-historico">
+              <thead>
+                <tr>
+                  <th>Data da Detecção</th>
+                  <th>Localização</th>
+                  <th>Nível de Infestação</th>
+                  <th>Status da Pupunheira</th>
+                  <th>Observações</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>10/11/2024</td>
+                  <td>Região Norte</td>
+                  <td>Alto</td>
+                  <td>Em tratamento</td>
+                  <td>Necessário monitoramento constante.</td>
+                  <td>
+                    <button class="btn-acao btn-visualizar"><i class="fa-solid fa-eye"></i></button>
+                    <button class="btn-acao btn-editar"><i class="fa-solid fa-pencil"></i></button>
+                    <button class="btn-acao btn-deletar"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>12/11/2024</td>
+                  <td>Região Sul</td>
+                  <td>Médio</td>
+                  <td>Saudável</td>
+                  <td>Acompanhamento em andamento.</td>
+                  <td>
+                    <button class="btn-acao btn-visualizar"><i class="fa-solid fa-eye"></i></button>
+                    <button class="btn-acao btn-editar"><i class="fa-solid fa-pencil"></i></button>
+                    <button class="btn-acao btn-deletar"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
     </div>
 
-        <!-- <table id="detectionsTable">
-            <thead>
-                <tr>
-                    <th>Data</th>
-                    <th>Localização</th>
-                    <th>Severidade</th>
-                    <th>Detalhes</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table> -->
+      
     </div>
     </div>    
     <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>

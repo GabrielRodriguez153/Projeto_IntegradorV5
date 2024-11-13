@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/dash.css')}}">
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css">
     <title>AntraVision</title>
 </head>
 <body>
@@ -26,19 +24,24 @@
 
             <div class="sub-content">
                 <div class="info">
-                    <h4>Total de Detecções Recentes</h4>
+                    <h4>Casos Recentes</h4>
+                    <h1>20</h1>
                 </div>
                 <div class="info">
-                    <h4>Área Afetada (hectares)</h4>
+                    <h4>Hectares Afetados</h4>
+                    <h1>10</h1>
                 </div>
                 <div class="info">
-                    <h4>Nível de Severidade Médio</h4>
+                    <h4>Nível Médio de Severidade</h4>
+                    <h1>35</h1>
                 </div>
             </div>
 
-            <div id="chart"></div>
+            <canvas id="chart" width="20" height="20"></canvas>
 
     <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{url_for('static', filename='js/graph.js')}}"></script>
 
 </body>
 </html>
