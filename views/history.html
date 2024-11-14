@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/history.css')}}">
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>    
     <title>AntraVision</title>
 </head>
 <body>
@@ -28,12 +27,14 @@
             <label>Localização:
                 <select id="location">
                     <option value="">Todas</option>
-                    <option value="Fazenda A">Fazenda A</option>
-                    <option value="Fazenda B">Fazenda B</option>
+                    <option value="Região Norte">Região Norte</option>
+                    <option value="Região Sul">Região Sul</option>
+                    <option value="Região Leste">Região Leste</option>
+                    <option value="Região Oeste">Região Oeste</option>
+                    <option value="Região Centro-Oeste">Região Centro-Oeste</option>
                 </select>
             </label>
             <button class="filter-button"><i class="fa-solid fa-filter"></i> Filtrar</button>
-            <button class="download-button"><i class="fa-solid fa-download"></i>Baixar</button>
         </div>
         <div class="historico-container">
             <table class="table-historico">
@@ -72,15 +73,46 @@
                     <button class="btn-acao btn-deletar"><i class="fa-solid fa-trash"></i></button>
                   </td>
                 </tr>
+                <tr>
+                  <td>13/11/2024</td>
+                  <td>Região Leste</td>
+                  <td>Baixo</td>
+                  <td>Recuperação</td>
+                  <td>Redução significativa na infestação.</td>
+                  <td>
+                    <button class="btn-acao btn-visualizar"><i class="fa-solid fa-eye"></i></button>
+                    <button class="btn-acao btn-editar"><i class="fa-solid fa-pencil"></i></button>
+                    <button class="btn-acao btn-deletar"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>14/11/2024</td>
+                  <td>Região Oeste</td>
+                  <td>Crítico</td>
+                  <td>Doente</td>
+                  <td>Intervenção imediata recomendada.</td>
+                  <td>
+                    <button class="btn-acao btn-visualizar"><i class="fa-solid fa-eye"></i></button>
+                    <button class="btn-acao btn-editar"><i class="fa-solid fa-pencil"></i></button>
+                    <button class="btn-acao btn-deletar"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
               </tbody>
             </table>
+          </div>
+          <div class="pagination">
+            <a href="#" class="page-number">1</a>
+            <a href="#" class="page-number">2</a>
+            <a href="#" class="page-number">3</a>
+            <a href="#" class="next">Próximo <i class="fa-solid fa-arrow-right"></i></a>
           </div>
     </div>
 
       
     </div>
-    </div>    
+    </div>
     <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='js/graph.js')}}"></script>
 
 </body>
 </html>
