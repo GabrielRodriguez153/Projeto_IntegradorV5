@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>AntraVision</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="login-section">
+        <h2>LOGIN</h2>
+        <hr>
+        <br>
+        <form action="{{url_for('login')}}" method="POST">
+        <div class="input-field">
+            <img src="{{url_for('static', filename='imgs/email-icon.svg')}}" alt="Email">
+            <input type="email" name="email" placeholder="Email">
+        </div>
+        <div class="input-field">
+            <img src="{{url_for('static', filename='imgs/lock-icon.svg')}}" alt="Senha">
+            <input type="password" name="password" placeholder="Senha">
+        </div>
+        <button class="login-button">LOGAR</button>
+        <div class="register-link">
+            <p>Não possui conta? <a href="{{url_for('signup')}}">Cadastre-se</a></p>
+        </div>
+    </form >
+    </div>
+    <div class="image-section">
+        <div class="logo">
+            <img src="{{url_for('static', filename='imgs/logo_white.svg')}}" alt="Logo ANTVSN" >
+            <img src="{{url_for('static', filename='imgs/sub_logo_white.svg')}}" alt="Logo ANTVSN">
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
+</html>
