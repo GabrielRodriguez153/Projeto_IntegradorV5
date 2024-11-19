@@ -60,12 +60,10 @@
                   <td>{{ item.observacao }}</td>
                   <td>{{ item.proprietario }}</td>
                   <td>
-                    <form action="{{ url_for('edit_history', id=item._id) }}" method="post" style="display:inline;">
-                      <button type="submit" class="btn-acao btn-editar">
+                      <button type="submit" class="btn-acao btn-editar"  data-id="{{item._id}}">
                         <i class="fa-solid fa-pencil"></i>
                       </button>
-                    </form>
-        
+
                     <form action="{{ url_for('delete_history', id=item._id) }}" method="post" style="display:inline;">
                       <button type="submit" class="btn-acao btn-deletar" onclick="return confirm('Tem certeza que deseja excluir este registro?')">
                         <i class="fa-solid fa-trash"></i>
@@ -82,33 +80,33 @@
       <span class="close-btn" id="closeModal">&times;</span>
       <h2>Editar Registro</h2>
       <br>
-      <form id="editForm">
-          <input type="hidden" id="edit-id">
+      <form id="editForm" method="post" action="{{ url_for('edit_history') }}">
+          <input type="hidden" id="edit-id" name="id">
           <div class="form-group">
               <label for="edit-data-deteccao">Data da Detecção:</label>
-              <input type="text" id="edit-data-deteccao" class="form-control">
+              <input type="text" name="data_deteccao" id="edit-data-deteccao" class="form-control">
           </div>
           <div class="form-group">
               <label for="edit-localizacao">Localização:</label>
-              <input type="text" id="edit-localizacao" class="form-control">
+              <input type="text" name="localizacao" id="edit-localizacao" class="form-control">
           </div>
           <div class="form-group">
               <label for="edit-nivel-infestacao">Nível de Infestação:</label>
-              <input type="text" id="edit-nivel-infestacao" class="form-control">
+              <input type="text" name="nivel_infestacao" id="edit-nivel-infestacao" class="form-control">
           </div>
           <div class="form-group">
               <label for="edit-status-pupunheira">Status:</label>
-              <input type="text" id="edit-status-pupunheira" class="form-control">
+              <input type="text" name="status_pupunheira" id="edit-status-pupunheira" class="form-control">
           </div>
           <div class="form-group">
               <label for="edit-observacoes">Observações:</label>
-              <input type="text" id="edit-observacoes" class="form-control">
+              <input type="text" name="observacoes" id="edit-observacoes" class="form-control">
           </div>
           <div class="form-group">
               <label for="edit-proprietario">Proprietário:</label>
-              <input type="text" id="edit-proprietario" class="form-control">
+              <input type="text" name="proprietario" id="edit-proprietario" class="form-control">
           </div>
-          <button type="button" id="saveChanges" class="btn-save">Salvar</button>
+          <button type="submit" id="saveChanges" class="btn-save">Salvar</button>
       </form>
   </div>
 </div>

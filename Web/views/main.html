@@ -14,13 +14,15 @@
             <ul>
                 <li><a href="{{url_for('main')}}" id="dashboardLink"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
                 <li><a href="{{url_for('history')}}" id="relatorioLink"><i class="fa-solid fa-file-lines"></i> Históricos</a></li>
-                <li><a href="{{url_for('perfil')}}" id="profileLink"><i class="fa-solid fa-user"></i> Perfil</a></li>
+                <li><a href="{{url_for('perfil')}}?user_id={{user_id}}" id="profileLink"><i class="fa-solid fa-user"></i> Perfil</a></li>
             </ul>
         </aside>
         
         <main class="main-content">
             <p class="first_text">Olá, {{user_name}}</p>
             <h2 class="welcome">Seja Bem-Vindo ao AntraVision</h2>
+            <div id="user-info" data-user-id="{{user_id}}" style="display: none;"></div>
+            
 
             <div class="sub-content">
                 <div class="info">

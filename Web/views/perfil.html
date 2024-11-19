@@ -53,29 +53,29 @@
             </legend>
 
             <label>Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Gabriel" />
+            <input type="text" id="nome" name="nome" value="{{ user_data['nome'] }}" />
 
             <label>Email</label>
             <input
               type="email"
               id="email"
               name="email"
-              placeholder="gabriel@gmail.com"
+              value="{{ user_data['email'] }}"
             />
 
             <div class="row">
               <div class="column">
                 <label>Telefone</label>
-                <input type="text" id="phone" placeholder="12345567" />
+                <input type="text" id="phone" value="{{ user_data['telefone'] }}" />
               </div>
               <div class="column">
                 <label>Senha</label>
-                <input type="password" id="password" placeholder="...." />
+                <input type="password" id="password" value="{{ user_data['senha'] }}" />
               </div>
             </div>
           </fieldset>
 
-          <fieldset class="local">
+          <!-- <fieldset class="local">
             <legend>
               <i class="fa-solid fa-map-location-dot"></i> &nbsp; Dados de
               Localização
@@ -85,8 +85,8 @@
             <input
               type="text"
               id="endereco"
-              name="endereco"
-              placeholder="Rua Teste"
+              name="logradouro"
+              value="{{ user_data['logradouro'] | e }}"
             />
 
             <label>Cidade</label>
@@ -94,7 +94,7 @@
               type="text"
               id="cidade"
               name="cidade"
-              placeholder="Registro"
+              value="{{ user_data['cidade'] | e }}"
             />
 
             <div class="row">
@@ -102,57 +102,57 @@
                 <label>Estado</label>
                 <select>
                   <option value="">Estado</option>
-                  <option value="Acre (AC)">Acre (AC)</option>
-                  <option value="Alagoas (AL)">Alagoas (AL)</option>
-                  <option value="Amapá (AP)">Amapá (AP)</option>
-                  <option value="Amazonas (AM)">Amazonas (AM)</option>
-                  <option value="Bahia (BA)">Bahia (BA)</option>
-                  <option value="Ceará (CE)">Ceará (CE)</option>
-                  <option value="Distrito Federal (DF)">
+                  <option value="Acre (AC)" {% if user_data['estado'] == "Acre (AC)" %}selected{% endif %}>Acre (AC)</option>
+                  <option value="Alagoas (AL)" {% if user_data['estado'] == "Alagoas (AL)" %}selected{% endif %}>Alagoas (AL)</option>
+                  <option value="Amapá (AP)" {% if user_data['estado'] == "Amapá (AP)" %}selected{% endif %}>Amapá (AP)</option>
+                  <option value="Amazonas (AM)" {% if user_data['estado'] == "Amazonas (AM)" %}selected{% endif %}>Amazonas (AM)</option>
+                  <option value="Bahia (BA)" {% if user_data['estado'] == "Bahia (BA)" %}selected{% endif %}>Bahia (BA)</option>
+                  <option value="Ceará (CE)" {% if user_data['estado'] == "Ceará (CE)" %}selected{% endif %}>Ceará (CE)</option>
+                  <option value="Distrito Federal (DF)" {% if user_data['estado'] == "Distrito Federal (DF)" %}selected{% endif %}>
                     Distrito Federal (DF)
                   </option>
-                  <option value="Espírito Santo (ES)">
+                  <option value="Espírito Santo (ES)" {% if user_data['estado'] == "Espírito Santo (ES)" %}selected{% endif %}>
                     Espírito Santo (ES)
                   </option>
-                  <option value="Goiás (GO)">Goiás (GO)</option>
-                  <option value="Maranhão (MA)">Maranhão (MA)</option>
-                  <option value="Mato Grosso (MT)">Mato Grosso (MT)</option>
-                  <option value="Mato Grosso do Sul (MS)">
+                  <option value="Goiás (GO)" {% if user_data['estado'] == "Goiás (GO)" %}selected{% endif %}>Goiás (GO)</option>
+                  <option value="Maranhão (MA)" {% if user_data['estado'] == "Maranhão (MA)" %}selected{% endif %}>Maranhão (MA)</option>
+                  <option value="Mato Grosso (MT)" {% if user_data['estado'] == "Mato Grosso (MT)" %}selected{% endif %}>Mato Grosso (MT)</option>
+                  <option value="Mato Grosso do Sul (MS)" {% if user_data['estado'] == "Mato Grosso do Sul (MS)" %}selected{% endif %}>
                     Mato Grosso do Sul (MS)
                   </option>
-                  <option value="Minas Gerais (MG)">Minas Gerais (MG)</option>
-                  <option value="Pará (PA)">Pará (PA)</option>
-                  <option value="Paraíba (PB)">Paraíba (PB)</option>
-                  <option value="Paraná (PR)">Paraná (PR)</option>
-                  <option value="Pernambuco (PE)">Pernambuco (PE)</option>
-                  <option value="Piauí (PI)">Piauí (PI)</option>
-                  <option value="Rio de Janeiro (RJ)">
+                  <option value="Minas Gerais (MG)" {% if user_data['estado'] == "Minas Gerais (MG)" %}selected{% endif %}>Minas Gerais (MG)</option>
+                  <option value="Pará (PA)" {% if user_data['estado'] == "Pará (PA)" %}selected{% endif %}>Pará (PA)</option>
+                  <option value="Paraíba (PB)" {% if user_data['estado'] == "Paraíba (PB)" %}selected{% endif %}>Paraíba (PB)</option>
+                  <option value="Paraná (PR)" {% if user_data['estado'] == "Paraná (PR)" %}selected{% endif %}>Paraná (PR)</option>
+                  <option value="Pernambuco (PE)" {% if user_data['estado'] == "Pernambuco (PE)" %}selected{% endif %}>Pernambuco (PE)</option>
+                  <option value="Piauí (PI)" {% if user_data['estado'] == "Piauí (PI)" %}selected{% endif %}>Piauí (PI)</option>
+                  <option value="Rio de Janeiro (RJ)" {% if user_data['estado'] == "Rio de Janeiro (RJ)" %}selected{% endif %}>
                     Rio de Janeiro (RJ)
                   </option>
-                  <option value="Rio Grande do Norte (RN)">
+                  <option value="Rio Grande do Norte (RN)" {% if user_data['estado'] == "Rio Grande do Norte (RN)" %}selected{% endif %}>
                     Rio Grande do Norte (RN)
                   </option>
-                  <option value="Rio Grande do Sul (RS)">
+                  <option value="Rio Grande do Sul (RS)" {% if user_data['estado'] == "Rio Grande do Sul (RS)" %}selected{% endif %}>
                     Rio Grande do Sul (RS)
                   </option>
-                  <option value="Rondônia (RO)">Rondônia (RO)</option>
-                  <option value="Roraima (RR)">Roraima (RR)</option>
-                  <option value="Santa Catarina (SC)">
+                  <option value="Rondônia (RO)" {% if user_data['estado'] == "Rondônia (RO)" %}selected{% endif %}>Rondônia (RO)</option>
+                  <option value="Roraima (RR)" {% if user_data['estado'] == "Roraima (RR)" %}selected{% endif %}>Roraima (RR)</option>
+                  <option value="Santa Catarina (SC)" {% if user_data['estado'] == "Santa Catarina (SC)" %}selected{% endif %}>
                     Santa Catarina (SC)
                   </option>
-                  <option value="São Paulo (SP)" selected>
+                  <option value="São Paulo (SP)" {% if user_data['estado'] == "São Paulo (SP)" %}selected{% endif %}>
                     São Paulo (SP)
                   </option>
-                  <option value="Sergipe (SE)">Sergipe (SE)</option>
-                  <option value="Tocantins (TO)">Tocantins (TO)</option>
+                  <option value="Sergipe (SE)" {% if user_data['estado'] == "Sergipe (SE)" %}selected{% endif %}>Sergipe (SE)</option>
+                  <option value="Tocantins (TO)" {% if user_data['estado'] == "Tocantins (TO)" %}selected{% endif %}>Tocantins (TO)</option>
                 </select>
               </div>
               <div class="column">
                 <label>CEP</label>
-                <input type="text" id="cep" placeholder="11900-000" />
+                <input type="text" id="cep" value="{{ user_data['cep'] | e }}" />
               </div>
             </div>
-          </fieldset>
+          </fieldset> -->
         </div>
       </div>
     </div>

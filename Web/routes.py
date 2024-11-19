@@ -74,8 +74,8 @@ def init_app(app):
     
     @app.route('/main')
     def main():
-        user_name = session.get('user_name', 'Usuário')
-        return render_template('main.html', user_name=user_name)
+        user_id = session["user_id"]
+        return render_template('main.html', user_id=user_id)
     
 
     @app.route('/history', methods=['GET'])
@@ -97,22 +97,42 @@ def init_app(app):
         
         return render_template('history.html', historico=historico)
     
-    @app.route('/history/edit/<id>', methods=['POST'])
-    def edit_history(id):
-        data = request.form
+    @app.route('/history/edit', methods=['POST'])
+    def edit_history():
         try:
+            data = request.form 
+        
+            item_id = data.get('id')
+            if not item_id:
+                return jsonify({"status": "error", "message": "ID do registro não fornecido"}), 400
+
+            try:
+                item_id = ObjectId(item_id)
+            except Exception:
+                return jsonify({"status": "error", "message": "ID inválido"}), 400
+        
             updated_data = {
-            "dt_analise": data['data_deteccao'], 
-            "localizacao": data['localizacao'],
-            "infestacao": data['nivel_infestacao'],
-            "status": data['status_pupunheira'],
-            "observacao": data['observacoes'],
-            "proprietario": data['proprietario'],
+                "dt_analise": data.get('data_deteccao'),
+                "localizacao": data.get('localizacao'),
+                "infestacao": data.get('nivel_infestacao'),
+                "status": data.get('status_pupunheira'),
+                "observacao": data.get('observacoes'),
+                "proprietario": data.get('proprietario'),
             }
-            DadosService.update_dado(ObjectId(id), updated_data) 
-            return jsonify({"status": "success", "message": "Registro atualizado com sucesso!"})
+        
+            if not all(updated_data.values()):
+                return jsonify({"status": "error", "message": "Campos obrigatórios estão faltando"}), 400
+
+        
+            resultado = DadosService.update_dado(item_id, updated_data)
+        
+            if resultado:
+                return redirect(url_for('history'))
+            else:
+                return jsonify({"status": "error", "message": "Não foi possível atualizar os dados"}), 500
+
         except Exception as e:
-            return jsonify({"status": "error", "message": f"Erro ao atualizar: {str(e)}"})
+            return jsonify({"status": "error", "message": f"Erro ao atualizar: {str(e)}"}), 500
         
     @app.route('/history/delete/<id>', methods=['POST'])
     def delete_history(id):
@@ -124,5 +144,10 @@ def init_app(app):
     
     @app.route('/perfil')
     def perfil():
-        return render_template('perfil.html')
+        user_id = request.args.get('user_id') 
+        if not user_id:
+            user_id = session["user_id"]
+        user_data = SignUpService.get_user_by_id(user_id)
+        
+        return render_template('perfil.html', user_data=user_data)
     
