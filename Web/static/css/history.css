@@ -167,6 +167,7 @@ body {
   transition: border-color 0.3s ease;
   width: 165px;
   height: 45px;
+  outline: none;
 }
 
 .filters input[type="date"]:focus,

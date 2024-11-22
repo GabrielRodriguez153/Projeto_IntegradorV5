@@ -146,15 +146,6 @@ body {
   margin-top: 2rem;
 }
 
-.mini-photo {
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  background-color: rgb(200, 196, 196);
-  margin-left: 3.2rem;
-  display: flex;
-}
-
 a {
   text-decoration: none;
   color: #ecf0f1;
@@ -169,55 +160,27 @@ a {
 }
 
 .stats_title {
-  font-size: 38px;
+  font-size: 43px;
   color: #31511e;
-  padding: 17px;
-  margin-left: 1.9rem;
+  margin-left: -3.1rem;
 }
 
-.upload-label {
-  font-size: 40px;
-  color: #fff;
-  padding-left: 1.5rem;
-  cursor: pointer;
+
+.section {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid #4caf50;
+  border-radius: 8px;
+  background-color: #d8f9d8;
+  max-width: 48%;
+  margin-right: -10rem;
 }
 
-.mini-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.personal {
-  border: 3px solid #1a5319;
-  border-radius: 10px;
-  padding: 15px 20px;
-  width: 1104px;
-  background-color: #def9c4;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: max-height 0.3s ease;
-  overflow: hidden;
-  max-height: 369px;
-  margin-left: 3rem;
-  margin-top: 1rem;
+.form-sections {
   display: flex;
-  flex-direction: column;
-}
-
-.local {
-  border: 3px solid #1a5319;
-  border-radius: 10px;
-  padding: 15px 20px;
-  width: 1104px;
-  background-color: #def9c4;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: max-height 0.3s ease;
-  overflow: hidden;
-  max-height: 369px;
-  margin-left: 3rem;
+  justify-content: space-between;
+  gap: 20px;
   margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
 }
 
 hr {
@@ -310,6 +273,8 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 3rem;
+  margin-left: 10rem;
 }
 
 .row {
