@@ -75,7 +75,8 @@ def init_app(app):
     @app.route('/main')
     def main():
         user_name = session.get('user_name')
-        return render_template("main.html", user_name=user_name)
+        user_id = session["user_id"]
+        return render_template("main.html", user_name=user_name, user_id=user_id)
     
 
     @app.route('/history', methods=['GET'])
