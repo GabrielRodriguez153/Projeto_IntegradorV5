@@ -31,3 +31,19 @@ window.addEventListener("click", function (e) {
     modal.style.display = "none";
   }
 });
+
+function openPopup() {
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+function confirmDeletion() {
+  closePopup(); 
+  document.getElementById("delete-form").submit();
+}
+
+
+

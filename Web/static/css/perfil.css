@@ -201,12 +201,6 @@ legend {
   padding-right: 5px;
 }
 
-label {
-  display: block;
-  margin-top: 10px;
-  color: #333;
-  font-weight: bold;
-}
 
 input[type="text"],
 input[type="email"],
@@ -214,7 +208,7 @@ input[type="tel"],
 input[type="password"],
 select {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-top: -15px;
   border: 2px solid #004d00;
   border-radius: 6px;
@@ -301,6 +295,19 @@ select {
   height: 19rem;
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-section1 {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  height: 19rem;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.fmr{
+  margin-top: 2px;
 }
 
 

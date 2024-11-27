@@ -152,3 +152,51 @@ def init_app(app):
         
         return render_template('perfil.html', user_data=user_data)
     
+    @app.route('/perfil/edit', methods=['GET', 'POST'])
+    def edit_perfil():
+        user_id = session.get('user_id')
+        if not user_id:
+            return redirect(url_for('login'))
+
+        if request.method == 'POST':
+            nome = request.form['nome']
+            telefone = request.form['telefone']
+            email = request.form['email']
+            senha = request.form['password']  
+
+            logradouro = request.form['logradouro']
+            cidade = request.form['cidade']
+            estado = request.form['estado']
+            cep = request.form['cep']
+
+            updated_data = {
+                'nome': nome,
+                'telefone': telefone,
+                'email': email,
+            }
+
+            if senha:
+                updated_data['senha'] = senha
+        
+
+            location_data = {
+                'endereco': {
+                    'logradouro': logradouro,
+                    'cidade': cidade,
+                    'estado': estado,
+                    'cep': cep
+                }
+            }
+
+            try:
+                resultado_pessoal = SignUpService.update_user(user_id, updated_data)
+                resultado_localizacao = SignUpService.update_user(user_id, location_data)
+
+                if resultado_pessoal and resultado_localizacao:
+                    return redirect(url_for('perfil'))
+            except Exception as e:
+                flash(f"Erro ao atualizar o perfil: {str(e)}", "danger")
+
+        user_data = SignUpService.get_user_by_id(user_id)
+
+        return redirect(url_for('perfil'))

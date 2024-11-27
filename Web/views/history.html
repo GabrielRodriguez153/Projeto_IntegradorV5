@@ -64,16 +64,28 @@
                         <i class="fa-solid fa-pencil"></i>
                       </button>
 
-                    <form action="{{ url_for('delete_history', id=item._id) }}" method="post" style="display:inline;">
-                      <button type="submit" class="btn-acao btn-deletar" onclick="return confirm('Tem certeza que deseja excluir este registro?')">
-                        <i class="fa-solid fa-trash"></i>
-                      </button>
+                      <form action="{{ url_for('delete_history', id=item._id) }}" method="post" style="display:inline;" id="delete-form">
+                        <button type="button" class="btn-acao btn-deletar" onclick="openPopup()">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
                     </form>
+    
+                    <div id="popup" class="popup-overlay" style="display: none;">
+                        <div class="popup-content">
+                            <h2>Confirmação de Exclusão</h2>
+                            <p>Tem certeza que deseja excluir este registro?</p>
+                            <div class="popup-buttons">
+                                <button type="button" onclick="closePopup()" class="btn-cancelar">Cancelar</button>
+                                <button type="button" onclick="confirmDeletion()" class="btn-confirmar">Confirmar</button>
+                            </div>
+                        </div>
+                    </div>
                   </td>
                 </tr>
                 {% endfor %}
               </tbody>
             </table>
+
             
 <div class="modal" id="editModal">
   <div class="modal-content">
