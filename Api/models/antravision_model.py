@@ -9,10 +9,11 @@ class SignUp():
         self.endereco = endereco
 
 class Dados():
-    def __init__(self, localizacao, infestacao, status, dt_analise, proprietario, observacao):
+    def __init__(self, localizacao, nivelInfestacao, status, dataDeteccao, proprietario, observacoes, hectares=0):
         self.localizacao = localizacao
-        self.infestacao = infestacao
+        self.nivelInfestacao = nivelInfestacao
         self.status = status
-        self.dt_analise = dt_analise
+        self.dataDeteccao = dataDeteccao
         self.proprietario = proprietario
-        self.observacao = observacao
+        self.observacoes = observacoes
+        self.hectares = hectares

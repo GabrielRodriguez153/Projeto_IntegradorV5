@@ -14,12 +14,13 @@ class SignUpSchema(ma.Schema):
 
 class DadosSchema(ma.Schema):
     class Meta:
-        fields = ('_id', 'localizacao', 'infestacao', 'status', 'dt_analise', 'proprietario', 'observacao')
+        fields = ('_id', 'localizacao', 'nivelInfestacao', 'status', 'dataDeteccao', 'proprietario', 'observacoes', 'hectares')
         
     _id = fields.Str()
     localizacao = fields.Str(required=True)
-    infestacao = fields.Str(required=True)
+    nivelInfestacao = fields.Str(required=True)
     status = fields.Str(required=True)
-    dt_analise = fields.Str(required=True)
+    dataDeteccao = fields.Str(required=True)
     proprietario = fields.Str(required=True)
-    observacao = fields.Str(required=True)    
+    observacoes = fields.Str(required=True)  
+    hectares = fields.Str(required=True)  

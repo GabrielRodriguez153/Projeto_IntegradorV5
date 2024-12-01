@@ -5,6 +5,7 @@ from Api.services.antravision_services import SignUpService, DadosService
 
 def init_app(app):
     
+    
     @app.route('/logout')
     def logout():
         session.clear()
@@ -75,7 +76,34 @@ def init_app(app):
     @app.route('/main')
     def main():
         user_name = session.get('user_name')
-        return render_template("main.html", user_name=user_name)
+        user_id = session["user_id"]
+        
+        
+        try:
+            total = DadosService.get_casos_recentes() 
+            hectares_afetados = DadosService.get_hectares_afetados()  
+            nivel_severidade = DadosService.get_nivel_severidade_mais_frequente() 
+            grafico_dados = DadosService.get_dados_grafico() 
+        except Exception as e:
+            casos_recentes = 0
+            grafico_dados = []
+        return render_template("main.html", user_name=user_name, user_id=user_id, total=total, 
+                           hectares_afetados=hectares_afetados,
+                           nivel_severidade=nivel_severidade,
+                           grafico_dados=grafico_dados)
+        
+    @app.route('/dados-grafico', methods=['GET'])
+    def dados_grafico():
+        try:
+            dados = DadosService.get_dados_grafico()
+            response = {
+                "labels": [dado["_id"] for dado in dados],
+                "data": [dado["totalPlantacoes"] for dado in dados],
+            }
+            return jsonify(response)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+        
     
 
     @app.route('/history', methods=['GET'])
@@ -112,12 +140,13 @@ def init_app(app):
                 return jsonify({"status": "error", "message": "ID inválido"}), 400
         
             updated_data = {
-                "dt_analise": data.get('data_deteccao'),
+                "dataDeteccao": data.get('data_deteccao'),
                 "localizacao": data.get('localizacao'),
-                "infestacao": data.get('nivel_infestacao'),
+                "nivelInfestacao": data.get('nivel_infestacao'),
                 "status": data.get('status_pupunheira'),
-                "observacao": data.get('observacoes'),
+                "observacoes": data.get('observacoes'),
                 "proprietario": data.get('proprietario'),
+                "hectares": data.get('hectares')
             }
         
             if not all(updated_data.values()):
@@ -151,3 +180,51 @@ def init_app(app):
         
         return render_template('perfil.html', user_data=user_data)
     
+    @app.route('/perfil/edit', methods=['GET', 'POST'])
+    def edit_perfil():
+        user_id = session.get('user_id')
+        if not user_id:
+            return redirect(url_for('login'))
+
+        if request.method == 'POST':
+            nome = request.form['nome']
+            telefone = request.form['telefone']
+            email = request.form['email']
+            senha = request.form['password']  
+
+            logradouro = request.form['logradouro']
+            cidade = request.form['cidade']
+            estado = request.form['estado']
+            cep = request.form['cep']
+
+            updated_data = {
+                'nome': nome,
+                'telefone': telefone,
+                'email': email,
+            }
+
+            if senha:
+                updated_data['senha'] = senha
+        
+
+            location_data = {
+                'endereco': {
+                    'logradouro': logradouro,
+                    'cidade': cidade,
+                    'estado': estado,
+                    'cep': cep
+                }
+            }
+
+            try:
+                resultado_pessoal = SignUpService.update_user(user_id, updated_data)
+                resultado_localizacao = SignUpService.update_user(user_id, location_data)
+
+                if resultado_pessoal and resultado_localizacao:
+                    return redirect(url_for('perfil'))
+            except Exception as e:
+                flash(f"Erro ao atualizar o perfil: {str(e)}", "danger")
+
+        user_data = SignUpService.get_user_by_id(user_id)
+
+        return redirect(url_for('perfil'))

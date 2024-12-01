@@ -16,6 +16,8 @@ document.querySelectorAll(".btn-editar").forEach((button) => {
       row.cells[4].textContent.trim();
     document.getElementById("edit-proprietario").value =
       row.cells[5].textContent.trim();
+    document.getElementById("edit-hectares").value =
+      row.cells[6].textContent.trim();
 
     modal.style.display = "flex";
   });
@@ -31,3 +33,19 @@ window.addEventListener("click", function (e) {
     modal.style.display = "none";
   }
 });
+
+function openPopup() {
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+function confirmDeletion() {
+  closePopup(); 
+  document.getElementById("delete-form").submit();
+}
+
+
+

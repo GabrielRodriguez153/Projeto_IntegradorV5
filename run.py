@@ -24,10 +24,11 @@ if __name__ == '__main__':
             dado = Dados(
                 localizacao='',
                 proprietario='',
-                infestacao='',
-                dt_analise='',
+                nivelInfestacao='',
+                dataDeteccao='',
                 status='',
-                observacao='',
+                observacoes='',
+                hectares=0
             )
             DadosService.add_dado(dado)
     

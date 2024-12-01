@@ -26,25 +26,54 @@
 
             <div class="sub-content">
                 <div class="info">
-                    <h4>Casos Recentes</h4>
-                    <h1>20</h1>
+                    <h4>Total de Casos</h4>
+                    <h1>{{ total }}</h1>
+                    
                 </div>
                 <div class="info">
                     <h4>Hectares Afetados</h4>
-                    <h1>10</h1>
+                    <h1>{{ hectares_afetados }}</h1>
                 </div>
                 <div class="info">
                     <h4>Nível Médio de Severidade</h4>
-                    <h1>35</h1>
+                    <h1 class="ex">{{ nivel_severidade }}</h1>
                 </div>
             </div>
-            <br>
-
-            <canvas id="myChart" width="5"></canvas>
+            <div class="graph-container">
+            <canvas id="myChart"></canvas>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Região <br> Sul</h3>
+                    <hr>
+                    <p>15 Plantações</p>
+                </div>
+                <div class="card">
+                    <h3>Região Norte</h3>
+                    <hr>
+                    <p>12 Plantações</p>
+                </div>
+                <div class="card">
+                    <h3>Região Leste</h3>
+                    <hr>
+                    <p>8 Plantações</p>
+                </div>
+                <div class="card">
+                    <h3>Região Oeste</h3>
+                    <hr>
+                    <p>10 Plantações</p>
+                </div>
+                <div class="card">
+                    <h3>Região Centro-Oeste</h3>
+                    <hr>
+                    <p>20 Plantações</p>
+                </div>
+            </div>
+        </div>
 
     <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{{url_for('static', filename='js/graph.js')}}"></script>
+      
 
 </body>
 </html>

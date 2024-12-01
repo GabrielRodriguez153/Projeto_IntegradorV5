@@ -47,33 +47,47 @@
                   <th>Status da Pupunheira</th>
                   <th>Observações</th>
                   <th>Proprietário</th>
+                  <th>Hectares</th>
                   <th>Ações</th>
                 </tr>
               </thead>
               <tbody>
                 {% for item in historico %}
                 <tr>
-                  <td>{{ item.dt_analise }}</td>
+                  <td>{{ item.dataDeteccao }}</td>
                   <td>{{ item.localizacao }}</td>
-                  <td>{{ item.infestacao }}</td>
+                  <td>{{ item.nivelInfestacao }}</td>
                   <td>{{ item.status }}</td>
-                  <td>{{ item.observacao }}</td>
+                  <td>{{ item.observacoes }}</td>
                   <td>{{ item.proprietario }}</td>
+                  <td>{{ item.hectares }}</td>
                   <td>
                       <button type="submit" class="btn-acao btn-editar"  data-id="{{item._id}}">
                         <i class="fa-solid fa-pencil"></i>
                       </button>
 
-                    <form action="{{ url_for('delete_history', id=item._id) }}" method="post" style="display:inline;">
-                      <button type="submit" class="btn-acao btn-deletar" onclick="return confirm('Tem certeza que deseja excluir este registro?')">
-                        <i class="fa-solid fa-trash"></i>
-                      </button>
+                      <form action="{{ url_for('delete_history', id=item._id) }}" method="post" style="display:inline;" id="delete-form">
+                        <button type="button" class="btn-acao btn-deletar" onclick="openPopup()">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
                     </form>
+    
+                    <div id="popup" class="popup-overlay" style="display: none;">
+                        <div class="popup-content">
+                            <h2>Confirmação de Exclusão</h2>
+                            <p>Tem certeza que deseja excluir este registro?</p>
+                            <div class="popup-buttons">
+                                <button type="button" onclick="closePopup()" class="btn-cancelar">Cancelar</button>
+                                <button type="button" onclick="confirmDeletion()" class="btn-confirmar">Confirmar</button>
+                            </div>
+                        </div>
+                    </div>
                   </td>
                 </tr>
                 {% endfor %}
               </tbody>
             </table>
+
             
 <div class="modal" id="editModal">
   <div class="modal-content">
@@ -106,16 +120,16 @@
               <label for="edit-proprietario">Proprietário:</label>
               <input type="text" name="proprietario" id="edit-proprietario" class="form-control">
           </div>
+          <div class="form-group">
+            <label for="edit-hectares">Hectares:</label>
+            <input type="text" name="hectares" id="edit-hectares" class="form-control">
+        </div>
           <button type="submit" id="saveChanges" class="btn-save">Salvar</button>
       </form>
   </div>
-</div>
-
-            
+</div>  
           </div>
     </div>
-
-      
     </div>
     </div>
     <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
