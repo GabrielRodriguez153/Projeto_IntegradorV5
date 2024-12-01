@@ -77,6 +77,7 @@ def init_app(app):
     def main():
         user_name = session.get('user_name')
         user_id = session["user_id"]
+<<<<<<< HEAD
         
         
         try:
@@ -104,6 +105,9 @@ def init_app(app):
         except Exception as e:
             return jsonify({"error": str(e)}), 500
         
+=======
+        return render_template("main.html", user_name=user_name, user_id=user_id)
+>>>>>>> 864d1789d32cc6490f5c0994c14fe9a5db322346
     
 
     @app.route('/history', methods=['GET'])
