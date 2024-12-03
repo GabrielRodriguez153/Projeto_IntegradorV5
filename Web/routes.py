@@ -5,7 +5,6 @@ from Api.services.antravision_services import SignUpService, DadosService
 
 def init_app(app):
     
-    
     @app.route('/logout')
     def logout():
         session.clear()
@@ -77,22 +76,24 @@ def init_app(app):
     def main():
         user_name = session.get('user_name')
         user_id = session["user_id"]
-<<<<<<< HEAD
-        
-        
         try:
             total = DadosService.get_casos_recentes() 
             hectares_afetados = DadosService.get_hectares_afetados()  
             nivel_severidade = DadosService.get_nivel_severidade_mais_frequente() 
             grafico_dados = DadosService.get_dados_grafico() 
+            
+            regioes = {dado["_id"]: dado["totalPlantacoes"] for dado in grafico_dados}
+
         except Exception as e:
             casos_recentes = 0
             grafico_dados = []
+            
         return render_template("main.html", user_name=user_name, user_id=user_id, total=total, 
                            hectares_afetados=hectares_afetados,
                            nivel_severidade=nivel_severidade,
-                           grafico_dados=grafico_dados)
-        
+                           grafico_dados=grafico_dados,
+                           regioes=regioes)
+ 
     @app.route('/dados-grafico', methods=['GET'])
     def dados_grafico():
         try:
@@ -105,9 +106,7 @@ def init_app(app):
         except Exception as e:
             return jsonify({"error": str(e)}), 500
         
-=======
         return render_template("main.html", user_name=user_name, user_id=user_id)
->>>>>>> 864d1789d32cc6490f5c0994c14fe9a5db322346
     
 
     @app.route('/history', methods=['GET'])
@@ -120,7 +119,7 @@ def init_app(app):
         historico = DadosService.get_dado()
         
         if data_inicial:
-            historico = [d for d in historico if d['dt_analise'] == data_inicial]
+            historico = [d for d in historico if d['dataDeteccao'] == data_inicial]
         if proper:
             historico = [d for d in historico if d['proprietario'] == proper]
         if localizacao:
@@ -194,7 +193,7 @@ def init_app(app):
             nome = request.form['nome']
             telefone = request.form['telefone']
             email = request.form['email']
-            senha = request.form['password']  
+            senha = request.form['senha']  
 
             logradouro = request.form['logradouro']
             cidade = request.form['cidade']
@@ -232,3 +231,19 @@ def init_app(app):
         user_data = SignUpService.get_user_by_id(user_id)
 
         return redirect(url_for('perfil'))
+    
+    @app.route('/notifications', methods=['GET'])
+    def notifications():
+        try:
+            notifications = DadosService.get_notifications()
+            return jsonify(notifications), 200
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+        
+    @app.route('/notifications/delete', methods=['POST'])
+    def clear_notifications():
+        try:
+            DadosService.clear_notifications()
+            return jsonify({"message": "Notificações limpas"}), 200
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500

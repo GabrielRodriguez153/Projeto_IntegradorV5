@@ -2,6 +2,7 @@ from Api import mongo
 from flask import render_template
 from ..models import antravision_model
 from bson import ObjectId 
+from datetime import datetime
 
 class SignUpService:
     
@@ -38,6 +39,20 @@ class SignUpService:
 
 class DadosService:
     
+    notifications_cache = []
+    
+    @staticmethod
+    def save_notification(message):
+        DadosService.notifications_cache.append({"message": message, "timestamp": datetime.now().strftime("%d/%m/%Y %H:%M:%S")})
+
+    @staticmethod
+    def get_notifications():
+        return DadosService.notifications_cache
+
+    @staticmethod
+    def clear_notifications():
+        DadosService.notifications_cache = []
+    
     @staticmethod
     def get_casos_recentes():
         try:
@@ -50,12 +65,12 @@ class DadosService:
     @staticmethod
     def get_hectares_afetados():
         try:
-            # Soma o total de hectares afetados, convertendo o campo 'hectares' para float
+            
             result = list(mongo.db.dados.aggregate([
                 {
                     "$addFields": {
                         "hectares_numeric": {
-                            "$toInt": "$hectares"  # Converte o campo 'hectares' de string para número
+                            "$toInt": "$hectares"  
                         }
                     }
                 },
@@ -80,11 +95,9 @@ class DadosService:
     @staticmethod
     def get_nivel_severidade_mais_frequente():
         try:
-            # Obtém o nível de infestação mais frequente
             result = list(mongo.db.dados.aggregate([
                 {"$group": {"_id": "$nivelInfestacao", "count": {"$sum": 1}}},
                 {"$sort": {"count": -1}},
-                {"$limit": 1}
             ]))
             return result[0]['_id'] if result else "N/A"
         except Exception as e:
@@ -94,12 +107,11 @@ class DadosService:
     @staticmethod
     def get_dados_grafico():
         try:
-            # Agrupa os dados por localização e conta o número de plantações
             result = list(mongo.db.dados.aggregate([
                 {"$group": {"_id": "$localizacao", "totalPlantacoes": {"$sum": 1}}},
                 {"$sort": {"totalPlantacoes": -1}}
             ]))
-            print(result)  # Verifique o formato dos resultados
+
             return result
         except Exception as e:
             print(f"Erro ao obter dados para o gráfico: {str(e)}")
@@ -125,6 +137,15 @@ class DadosService:
             {'$set': updated_data},
             return_document=True
         )
+        
+        if updated_dado:
+            mensagem = f"Histórico atualizado: {updated_dado.get('proprietario', 'Proprietário desconhecido')} - " \
+                   f"Status: {updated_data.get('status', 'N/A')}."
+        DadosService.notifications_cache.append({
+            "message": mensagem,
+            "timestamp": datetime.now().strftime("%d/%m/%Y %H:%M")
+        })
+            
         return updated_dado
 
     @staticmethod

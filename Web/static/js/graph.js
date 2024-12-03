@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: data.labels, // Labels dinâmicos das localizações
+          labels: data.labels, 
           datasets: [
             {
               type: 'bar',
-              data: data.data, // Quantidade de plantações
+              data: data.data, 
               backgroundColor: '#1a5319'
             },
           ]
@@ -35,3 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Erro ao carregar os dados do gráfico:', error);
     });
 });
+
+
+

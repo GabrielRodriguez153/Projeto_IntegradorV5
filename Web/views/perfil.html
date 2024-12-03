@@ -48,13 +48,12 @@
                   <i class="fa-solid fa-right-from-bracket"></i> &nbsp;Sair
                 </a>
               </button>
-            </form>
             </div>
           </div>
           <div class="form-container" >
             <div class="form-section">
                 <h3><i class="fa-solid fa-id-card"></i> Dados Pessoais</h3>
-              <form>
+                <div class="form">
                     <div>
                         <input type="text" id="nome" name="nome" value="{{user_data.nome}}"/>
                     </div>
@@ -67,13 +66,12 @@
                     <div>
                         <input type="password" id="senha" name="senha" value="{{user_data.senha}}"/>
                     </div>
-                    
-                </form>
+                  </div>
             </div>
         
             <div class="form-section1">
                 <h3><i class="fa-solid fa-map-location-dot"></i> Localização</h3>
-                <form>
+                <div class="form">
                     <div>
                         <input type="text" id="logradouro" name="logradouro" value="{{user_data.endereco.logradouro}}">
                     </div>
@@ -116,10 +114,10 @@
                     <div>
                         <input type="text" id="cep" name="cep" value="{{user_data.endereco.cep}}">
                     </div>
-                </form>
+                  </div>
             </div>
         </div>
-
+      </form>
       </div>
     </div>
     <script

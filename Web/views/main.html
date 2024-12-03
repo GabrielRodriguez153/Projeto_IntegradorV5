@@ -41,38 +41,29 @@
             </div>
             <div class="graph-container">
             <canvas id="myChart"></canvas>
-            <div class="cards-container">
-                <div class="card">
-                    <h3>Região <br> Sul</h3>
-                    <hr>
-                    <p>15 Plantações</p>
+            <div class="dashboard-content">
+                <div class="cards">
+                  <div class="card"><h3>Região Sul <hr></h3>  <p>{{ regioes["Região Sul"] }}</p> </div>
+                  <div class="card"><h3>Região Norte <hr></h3> <p>{{ regioes["Região Norte"] }}</p> </div>
+                  <div class="card"><h3>Região Leste <hr></h3> <p>{{ regioes["Região Leste"] }}</p> </div>
+                  <div class="card"><h3>Região Oeste <hr></h3> <p>{{ regioes["Região Oeste"] }}</p> </div>
+                  <div class="card"><h3>Região Central <hr></h3> <p>{{ regioes["Região Central"] }}</p> </div>
                 </div>
-                <div class="card">
-                    <h3>Região Norte</h3>
-                    <hr>
-                    <p>12 Plantações</p>
+              
+                <div id="notifications" class="notification-panel">
+                  <h3>Notificações</h3>
+                  <ul id="notification-list">
+                  </ul>
+                  <button id="clear-notifications" class="btn-clear">Limpar Notificações</button>
                 </div>
-                <div class="card">
-                    <h3>Região Leste</h3>
-                    <hr>
-                    <p>8 Plantações</p>
-                </div>
-                <div class="card">
-                    <h3>Região Oeste</h3>
-                    <hr>
-                    <p>10 Plantações</p>
-                </div>
-                <div class="card">
-                    <h3>Região Centro-Oeste</h3>
-                    <hr>
-                    <p>20 Plantações</p>
-                </div>
-            </div>
+              </div>
+              
         </div>
 
     <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{{url_for('static', filename='js/graph.js')}}"></script>
+    <script src="{{url_for('static', filename='js/notifications.js')}}"></script>
       
 
 </body>
