@@ -1,17 +1,18 @@
-# Projeto Integrador V4
+# 🌴 Projeto Integrador V4
 
 ## Sobre o Projeto
-O Projeto Integrador V4 tem como objetivo [descreva brevemente o propósito principal do projeto, como resolver um problema, fornecer um serviço ou criar uma funcionalidade específica]. Este repositório inclui a implementação de uma interface web, uma API e a configuração necessária para rodar o sistema.
+O Projeto Integrador Antravision tem como objetivo desenvolver um sistema integrado, composto por um aplicativo móvel e uma plataforma web, para identificar e gerenciar a antracnose em pupunheiras, utilizando Aprendizagem Profunda para diagnósticos rápidos e precisos.. Este repositório inclui a implementação de uma interface web, uma API e a configuração necessária para rodar o sistema.
 
 ## Funcionalidades
-- [Funcionalidade 1]
-- [Funcionalidade 2]
-- [Funcionalidade 3]
+- [Tela de Login / Cadastro]
+- [Tela do Dashboard]
+- [Tela do Histórico de Detecções]
+- [Tela de Perfil]
 
 ## Tecnologias Utilizadas
-- *Frontend*: HTML, CSS, JavaScript
+- *Frontend*: HTML, CSS, JavaScript, Flask
 - *Backend*: Python
-- *Outras ferramentas*: [descreva dependências ou bibliotecas principais]
+- *Banco de Dados*: MongoDB
 
 ## Como Instalar e Rodar o Projeto
 1. Clone este repositório:
@@ -28,20 +29,15 @@ O Projeto Integrador V4 tem como objetivo [descreva brevemente o propósito prin
    
 4. Inicie o servidor:
    bash
-   python [arquivo_principal].py
+   python run.py
    
-5. Acesse a aplicação no navegador em http://localhost:8000.
+5. Acesse a aplicação no navegador em http://localhost:4000.
 
 ## Estrutura do Projeto
 - */api*: Contém o código referente à API.
 - */web*: Inclui os arquivos da interface web (HTML, CSS, JS).
 - *requirements.txt*: Lista de dependências Python necessárias.
 - *README.md*: Documentação do projeto.
-
-## Roadmap
-- [ ] Implementar novas funcionalidades.
-- [ ] Melhorar a interface do usuário.
-- [ ] Adicionar testes automatizados.
 
 ## Contribuições
 Contribuições são bem-vindas! Para contribuir:
@@ -52,9 +48,6 @@ Contribuições são bem-vindas! Para contribuir:
    
 3. Envie um pull request.
 
-## Licença
-[Especifique a licença, caso aplicável.]
-
 ## Contato
-Gabriel Rodriguez  
-[Email ou outra forma de contato]
+Gabriel Henrique Rodrigues de Salles
+Email para Contato : [gabrodriguez153@gmail.com]
