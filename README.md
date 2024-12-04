@@ -16,9 +16,9 @@ En nosso Projeto denominado Antravision, possuimos como objetivo desenvolver um 
 ![Imagem](Web/static/imgs/TeladePerfil.png)
 
 ## Tecnologias Utilizadas
-- *Frontend*: ![Texto alternativo](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/800px-HTML5_logo_and_wordmark.svg.png), ![Texto alternativo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png), ![Texto alternativo](https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png), ![Texto alternativo]([https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/800px-HTML5_logo_and_wordmark.svg.png](https://danizavtz.com.br/content/images/2023/05/flask-horizontal.webp))
-- *Backend*: ![Texto alternativo]([https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png](https://cdn.icon-icons.com/icons2/2699/PNG/512/python_vertical_logo_icon_168039.png))
-- *Banco de Dados*: ![Texto alternativo]([https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png](https://logospng.org/download/mongodb/mongodb-4096.png))
+- *Frontend*: HTML, CSS, JavaScript e Python Flask
+- *Backend*: Python
+- *Banco de Dados*: MongoDB
 
 ## Como Instalar e Rodar o Projeto
 1. Clone este repositório:
