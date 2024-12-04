@@ -49,5 +49,5 @@ Contribuições são bem-vindas! Para contribuir:
 3. Envie um pull request.
 
 ## Contato
-Gabriel Henrique Rodrigues de Salles
-Email para Contato : gabrodriguez153@gmail.com
+- Gabriel Henrique Rodrigues de Salles
+- Email para Contato : gabrodriguez153@gmail.com
