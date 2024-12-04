@@ -1,13 +1,13 @@
-# 🌴 Projeto Integrador V4
+# 🌴 Projeto Integrador - Antravision
 
 ## Sobre o Projeto
 O Projeto Integrador Antravision tem como objetivo desenvolver um sistema integrado, composto por um aplicativo móvel e uma plataforma web, para identificar e gerenciar a antracnose em pupunheiras, utilizando Aprendizagem Profunda para diagnósticos rápidos e precisos.. Este repositório inclui a implementação de uma interface web, uma API e a configuração necessária para rodar o sistema.
 
 ## Funcionalidades
-- [Tela de Login / Cadastro]
-- [Tela do Dashboard]
-- [Tela do Histórico de Detecções]
-- [Tela de Perfil]
+- Tela de Login / Cadastro
+- Tela do Dashboard
+- Tela do Histórico de Detecções
+- Tela de Perfil
 
 ## Tecnologias Utilizadas
 - *Frontend*: HTML, CSS, JavaScript, Flask
