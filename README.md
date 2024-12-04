@@ -50,4 +50,4 @@ Contribuições são bem-vindas! Para contribuir:
 
 ## Contato
 Gabriel Henrique Rodrigues de Salles
-Email para Contato : [gabrodriguez153@gmail.com]
+Email para Contato : gabrodriguez153@gmail.com
