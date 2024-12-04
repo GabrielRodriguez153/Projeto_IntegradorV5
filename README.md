@@ -5,15 +5,20 @@ En nosso Projeto denominado Antravision, possuimos como objetivo desenvolver um 
 
 ## Funcionalidades
 - Tela de Login / Cadastro
-- ![Imagem](Web/static/imgs/TeladeLogin.png)
+![Imagem](Web/static/imgs/TeladeLogin.png)
+![Imagem](Web/static/imgs/TeladeCadastro.png)
+![Imagem](Web/static/imgs/TeladeCadastro1.png)
 - Tela do Dashboard
+![Imagem](Web/static/imgs/TelaPrincipal.png)
 - Tela do Histórico de Detecções
+![Imagem](Web/static/imgs/TeladeHistorico.png)
 - Tela de Perfil
+![Imagem](Web/static/imgs/TeladePerfil.png)
 
 ## Tecnologias Utilizadas
-- *Frontend*: HTML, CSS, JavaScript, Flask
-- *Backend*: Python
-- *Banco de Dados*: MongoDB
+- *Frontend*: ![Texto alternativo](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/800px-HTML5_logo_and_wordmark.svg.png), ![Texto alternativo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png), ![Texto alternativo](https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png), ![Texto alternativo]([https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/800px-HTML5_logo_and_wordmark.svg.png](https://danizavtz.com.br/content/images/2023/05/flask-horizontal.webp))
+- *Backend*: ![Texto alternativo]([https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png](https://cdn.icon-icons.com/icons2/2699/PNG/512/python_vertical_logo_icon_168039.png))
+- *Banco de Dados*: ![Texto alternativo]([https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png](https://logospng.org/download/mongodb/mongodb-4096.png))
 
 ## Como Instalar e Rodar o Projeto
 1. Clone este repositório:
