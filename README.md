@@ -5,7 +5,7 @@ En nosso Projeto denominado Antravision, possuimos como objetivo desenvolver um 
 
 ## Funcionalidades
 - Tela de Login / Cadastro
-- ![Imagem](Desktop/Telas/TeladeLogin.png)
+- ![Imagem](Web/static/imgs/TeladeLogin.png)
 - Tela do Dashboard
 - Tela do Histórico de Detecções
 - Tela de Perfil
