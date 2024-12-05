@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "674ca977a5456226f8eff5c6"
+  },
+  "nome": "",
+  "telefone": "",
+  "email": "",
+  "senha": "",
+  "endereco": ""
+},
+{
+  "_id": {
+    "$oid": "674cb3b1f7c07e40b1982b2d"
+  },
+  "nome": "Gabriel",
+  "telefone": "13 99695-2933",
+  "email": "gabriel@gmail.com",
+  "senha": "1234",
+  "endereco": {
+    "logradouro": "Rua Teste",
+    "cidade": "teste",
+    "estado": "Minas Gerais (MG)",
+    "cep": "29843-000"
+  }
+}]

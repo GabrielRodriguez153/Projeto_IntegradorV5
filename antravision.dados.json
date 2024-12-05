@@ -1,0 +1,144 @@
+[{
+  "_id": {
+    "$oid": "674f96c38d10021a1352d354"
+  },
+  "dataDeteccao": "2024-11-16",
+  "localizacao": "Região Sul",
+  "nivelInfestacao": "Alto",
+  "observacoes": "Aplicação de pesticidas em andamento",
+  "proprietario": "Pedro",
+  "hectares": 15,
+  "status": "Em tratamento"
+},
+{
+  "_id": {
+    "$oid": "674f96c38d10021a1352d355"
+  },
+  "dataDeteccao": "2024-11-17",
+  "localizacao": "Região Central",
+  "nivelInfestacao": "Baixo",
+  "observacoes": "Nenhuma ação necessária",
+  "proprietario": "João",
+  "hectares": 10,
+  "status": "Saudável"
+},
+{
+  "_id": {
+    "$oid": "674f96c38d10021a1352d356"
+  },
+  "dataDeteccao": "2024-11-18",
+  "localizacao": "Região Norte",
+  "nivelInfestacao": "Alto",
+  "observacoes": "Continuar monitoramento mensal",
+  "proprietario": "Laura",
+  "hectares": "20",
+  "status": "Estável"
+},
+{
+  "_id": {
+    "$oid": "674f96c38d10021a1352d357"
+  },
+  "dataDeteccao": "2024-11-19",
+  "localizacao": "Região Leste",
+  "nivelInfestacao": "Alto",
+  "observacoes": "Intervenção urgente recomendada",
+  "proprietario": "Rodrigo",
+  "hectares": 25,
+  "status": "Crítico"
+},
+{
+  "_id": {
+    "$oid": "674f96c38d10021a1352d358"
+  },
+  "dataDeteccao": "2024-11-20",
+  "localizacao": "Região Central",
+  "nivelInfestacao": "Baixo",
+  "observacoes": "Boa condição, sem preocupações",
+  "proprietario": "Fernanda",
+  "hectares": 8,
+  "status": "Saudável"
+},
+{
+  "_id": {
+    "$oid": "674f96c38d10021a1352d359"
+  },
+  "dataDeteccao": "2024-11-21",
+  "localizacao": "Região Sul",
+  "nivelInfestacao": "Médio",
+  "observacoes": "Monitoramento sugerido para o próximo trimestre",
+  "proprietario": "Beatriz",
+  "hectares": 12,
+  "status": "Estável"
+},
+{
+  "_id": {
+    "$oid": "674f96c38d10021a1352d35a"
+  },
+  "dataDeteccao": "2024-11-22",
+  "localizacao": "Região Oeste",
+  "nivelInfestacao": "Alto",
+  "observacoes": "Nova infestação detectada, iniciando controle",
+  "proprietario": "Carlos",
+  "hectares": 18,
+  "status": "Em tratamento"
+},
+{
+  "_id": {
+    "$oid": "674f96c38d10021a1352d35b"
+  },
+  "dataDeteccao": "2024-11-23",
+  "localizacao": "Região Sul",
+  "nivelInfestacao": "Baixo",
+  "observacoes": "Condição ideal mantida, nenhuma intervenção necessária",
+  "proprietario": "Mariana",
+  "hectares": 14,
+  "status": "Saudável"
+},
+{
+  "_id": {
+    "$oid": "674f96c38d10021a1352d35c"
+  },
+  "dataDeteccao": "2024-11-24",
+  "localizacao": "Região Norte",
+  "nivelInfestacao": "Médio",
+  "observacoes": "Continuar monitoramento trimestral",
+  "proprietario": "Rafael",
+  "hectares": 22,
+  "status": "Estável"
+},
+{
+  "_id": {
+    "$oid": "674f96c38d10021a1352d35d"
+  },
+  "dataDeteccao": "2024-11-25",
+  "localizacao": "Região Leste",
+  "nivelInfestacao": "Crítico",
+  "observacoes": "Tratamento intensivo necessário para contenção",
+  "proprietario": "Camila",
+  "hectares": 30,
+  "status": "Infestada"
+},
+{
+  "_id": {
+    "$oid": "674f96c38d10021a1352d35e"
+  },
+  "dataDeteccao": "2024-11-26",
+  "localizacao": "Região Sul",
+  "nivelInfestacao": "Alto",
+  "observacoes": "Infestação severa, monitoramento contínuo",
+  "proprietario": "Thiago",
+  "hectares": 16,
+  "status": "Crítico"
+},
+{
+  "_id": {
+    "$oid": "674f96c38d10021a1352d35f"
+  },
+  "dataDeteccao": "2024-11-27",
+  "localizacao": "Região Central",
+  "nivelInfestacao": "Baixo",
+  "observacoes": "Condição favorável mantida",
+  "proprietario": "Sofia",
+  "hectares": 11,
+  "status": "Saudável"
+}]
