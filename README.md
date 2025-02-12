@@ -41,7 +41,7 @@ En nosso Projeto denominado Antravision, possuimos como objetivo desenvolver um 
 
 ## Estrutura do Projeto
 - */api*: Contém o código referente à API.
-- */web*: Inclui os arquivos da interface web (HTML, CSS, JS).
+- */front*: Inclui os arquivos da interface web (HTML, CSS, JS).
 - *requirements.txt*: Lista de dependências Python necessárias.
 - *README.md*: Documentação do projeto.
 
