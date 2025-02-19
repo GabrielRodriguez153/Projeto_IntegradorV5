@@ -1,153 +1,217 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #B5D1B5; 
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #b5d1b5;
 }
 
+/* PÁGINA DE LOGIN */
 .container {
-    width: 60%;
-    max-width: 1300px;
-    height: 563px;
-    display: flex;
-    border-radius: 15px;
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 60%;
+  max-width: 1300px;
+  height: 563px;
+  display: flex;
+  border-radius: 15px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .login-section {
-    display: grid;
-    grid-template-columns: 1fr 0.1fr 2fr; 
-    grid-template-rows: auto auto 1fr; 
-    align-items: center;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 0.1fr 2fr;
+  grid-template-rows: auto auto 1fr;
+  align-items: center;
+  justify-content: center;
 }
 
-.image-section{
-    background-image: url(../imgs/foto_inicial.webp);
-    background-size: cover;
-    filter: brightness(60%);
-    background-position-x: center;
-    width: 470px;
-    border-radius: 15px;
-    height: 564px;
-    grid-column: 1;
-    grid-row: 1 / span 3;
+.image-section {
+  background-image: url(../imgs/foto_inicial.webp);
+  background-size: cover;
+  filter: brightness(60%);
+  background-position-x: center;
+  width: 470px;
+  border-radius: 15px;
+  height: 564px;
+  grid-column: 1;
+  grid-row: 1 / span 3;
 }
 
-.line{
-    width: 4px;
-    height: 430px;
-    background-color: #1e1e1e;
-    grid-column: 2;
-    margin-left: 2.5rem;
-    grid-row: 1 / span 3;
-    margin-top: 0.5rem;
-    border-radius: 5px;
-    filter: opacity(0.1);
-    margin-right: -0.5rem;
-}
-
-.title{
-    font-size: 2rem;
-    padding-top: 14rem;
-    text-align: center;
-    grid-column: 3;
-    grid-row: 2;
-    color: #3E3E3E;
-    margin-left: -1rem;
+.title {
+  font-size: 2rem;
+  padding-top: 14rem;
+  text-align: center;
+  grid-column: 3;
+  grid-row: 2;
+  color: #3e3e3e;
+  margin-left: -1rem;
 }
 
 .logo {
-    width: 10rem;
-    grid-column: 3;
-    grid-row: 1;
-    justify-self: center;
-    margin-bottom: -15rem;
-    margin-left: -2rem;
+  width: 10rem;
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: center;
+  margin-bottom: -15rem;
+  margin-left: -2rem;
 }
 
-.form{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    grid-column: 3;
-    align-items: center; 
-    justify-content: center;
-    width: 100%; 
-    margin-top: -4rem;
-    margin-left: -0.35rem;
-    margin-right: -0.35rem;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  grid-column: 3;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: -4rem;
+  margin-left: -0.35rem;
+  margin-right: -0.35rem;
 }
 
 .form input {
-    width: 80%;
-    padding: 12px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease;
-    background-color: #f9f9f9;
-    color: #333;
+  width: 80%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 .form input:focus {
-    border-color: #1A5319;
-    box-shadow: 0 0 8px rgba(26, 83, 25, 0.4);
-    background-color: #fff;
+  border-color: #1a5319;
+  box-shadow: 0 0 8px rgba(26, 83, 25, 0.4);
+  background-color: #fff;
 }
 
 .form input::placeholder {
-    color: #999;
-    transition: all 0.3s ease;
+  color: #999;
+  transition: all 0.3s ease;
 }
 
 .form input:focus::placeholder {
-    color: #666;
+  color: #666;
 }
 
 .form button {
-    width: 80%;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    background-color: #1A5319;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 2rem;
+  width: 80%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #1a5319;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
 }
 
 .form button:hover {
-    background-color: #144015;
-    box-shadow: 0 4px 8px rgba(26, 83, 25, 0.4);
+  background-color: #144015;
+  box-shadow: 0 4px 8px rgba(26, 83, 25, 0.4);
 }
 
 .form button:active {
-    background-color: #0f3010;
-    transform: scale(0.98);
+  background-color: #0f3010;
+  transform: scale(0.98);
 }
 
 .form p {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 .form a {
-    color: #1A5319;
+  color: #1a5319;
+}
+
+/* PÁGINA DE CADASTRO - 1° ETAPA */
+.image-section2 {
+  background-image: url(../imgs/foto_inicial.webp);
+  background-size: cover;
+  filter: brightness(60%);
+  background-position-x: center;
+  width: 470px;
+  border-radius: 15px;
+  height: 564px;
+  grid-column: 2;
+  grid-row: 1 / span 3;
+}
+
+.login-section2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.title2 {
+  font-size: 1.8rem;
+  padding-top: 0rem;
+  text-align: left;
+  color: #3e3e3e;
+  padding-left: 1rem;
+  word-spacing: 2rem;
+}
+
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  margin-top: -48rem;
+}
+
+.step-circle {
+  width: 30px;
+  height: 29px;
+  background-color: #aab9aa;
+  border-radius: 50%;
+  font-size: 18px;
+  text-align: center;
+  margin: 0 5px;
+  color: white;
+  transition: background 0.3s;
+  font-weight: 700;
+  align-self: center;
+}
+
+hr {
+  width: 22rem;
+  margin-left: 3rem;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.2rem;
+}
+
+.step-circle.active {
+  background-color: #144015;
+}
+
+.logo2 {
+  width: 9rem;
+  padding: 1rem;
+  margin-left: 9.5rem;
+}
+
+h3 {
+  text-align: center;
+  margin-top: -24rem;
 }
 
 /* .login-section h2 {

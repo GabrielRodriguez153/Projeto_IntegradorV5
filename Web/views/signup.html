@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <title>AntraVision</title>
 </head>
+
 <body>
     <div class="container">
-        <div class="image-section2">
-            <div class="logo">
-                <img src="{{url_for('static', filename='imgs/logo_white.svg')}}" alt="Logo ANTVSN">
-                <img src="{{url_for('static', filename='imgs/sub_logo_white.svg')}}" alt="Logo ANTVSN">
-               
+        <div class="login-section2">
+            <div class="image-section2"></div>
+            <img class="logo2" src="{{url_for('static', filename='imgs/logo-black.svg')}}" alt="Logo ANTVSN">
+            <hr>
+            <h3>Crie sua Conta e Comece Agora!</h3>
+            <div class="step-indicator">
+                <span class="step-circle active">
+                    <p>1</p>
+                </span>
+                <span class="step-circle">
+                    <p>2</p>
+                </span>
             </div>
-        </div>
-        <div class="login-section">
-            <a href="{{url_for('login')}}" class="close"><i class="fa-solid fa-xmark fa-2xl"></i></a>
+            <!-- <a href="{{url_for('login')}}" class="close"><i class="fa-solid fa-xmark fa-2xl"></i></a>
             <h2>CADASTRO</h2>
             <hr>
             <form action="{{url_for('signup')}}" method="post">
@@ -38,9 +45,10 @@
             </div>
             <a class="next" href="{{url_for('signup2')}}"><button class="signup-button">PRÓXIMO</button></a>
         </form>
+        </div> -->
+
         </div>
-       
-    </div>
 </body>
 <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
+
 </html>

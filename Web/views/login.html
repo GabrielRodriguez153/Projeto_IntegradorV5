@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <title>AntraVision</title>
 </head>
+
 <body>
 
-<div class="container">
-    <div class="login-section">
-        <div class="image-section"></div>
-        <img class="logo" src="{{url_for('static', filename='imgs/logo-black.svg')}}" alt="Logo ANTVSN" >
-        <h2 class="title">Bem vindo de Volta!</h2>
-        <form class="form" action="{{url_for('login')}}" method="POST">
-            <input type="email" name="email" placeholder="Email">
-            <input type="password" name="password" placeholder="Senha">
-            <button type="submit">Entrar</button>
-            <p>Entre para nossa Plataforma | <a href="{{url_for('signup')}}">Cadastre-se</a></p>
-        </form>
+    <div class="container">
+        <div class="login-section">
+            <div class="image-section"></div>
+            <img class="logo" src="{{url_for('static', filename='imgs/logo-black2.svg')}}" alt="Logo ANTVSN">
+            <h2 class="title">Bem vindo de Volta!</h2>
+            <form class="form" action="{{url_for('login')}}" method="POST">
+                <input type="email" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Senha">
+                <button type="submit">Entrar</button>
+                <p>Entre para nossa Plataforma | <a href="{{url_for('signup')}}">Cadastre-se</a></p>
+            </form>
+        </div>
     </div>
-</div>
 </body>
 <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
+
 </html>
