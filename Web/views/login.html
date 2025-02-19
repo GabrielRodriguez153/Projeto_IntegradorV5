@@ -10,32 +10,17 @@
 
 <div class="container">
     <div class="login-section">
-        <h2>LOGIN</h2>
-        <hr>
-        <br>
-        <form action="{{url_for('login')}}" method="POST">
-        <div class="input-field">
-            <img src="{{url_for('static', filename='imgs/email-icon.svg')}}" alt="Email">
+        <div class="image-section"></div>
+        <img class="logo" src="{{url_for('static', filename='imgs/logo-black.svg')}}" alt="Logo ANTVSN" >
+        <h2 class="title">Bem vindo de Volta!</h2>
+        <form class="form" action="{{url_for('login')}}" method="POST">
             <input type="email" name="email" placeholder="Email">
-        </div>
-        <div class="input-field">
-            <img src="{{url_for('static', filename='imgs/lock-icon.svg')}}" alt="Senha">
             <input type="password" name="password" placeholder="Senha">
-        </div>
-        <button class="login-button">LOGAR</button>
-        <div class="register-link">
-            <p>Não possui conta? <a href="{{url_for('signup')}}">Cadastre-se</a></p>
-        </div>
-    </form >
-    </div>
-    <div class="image-section">
-        <div class="logo">
-            <img src="{{url_for('static', filename='imgs/logo_white.svg')}}" alt="Logo ANTVSN" >
-            <img src="{{url_for('static', filename='imgs/sub_logo_white.svg')}}" alt="Logo ANTVSN">
-        </div>
+            <button type="submit">Entrar</button>
+            <p>Entre para nossa Plataforma | <a href="{{url_for('signup')}}">Cadastre-se</a></p>
+        </form>
     </div>
 </div>
-
 </body>
 <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
 </html>

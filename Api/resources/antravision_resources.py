@@ -65,7 +65,7 @@ class DadosList(Resource):
             return make_response(jsonify(validate), 400)
         else:
             json_data = request.get_json()
-            new_dado = antravision_model.Dados(**json_data)
+            new_dado = antravision_model.Dados(**json_data).to_dict()
             result = DadosService.add_dado(new_dado)
             res = dadoschema.jsonify(result)
             return make_response(res,201)
