@@ -48,7 +48,7 @@ body {
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding-top: 14rem;
   text-align: center;
   grid-column: 3;
@@ -131,7 +131,7 @@ body {
 }
 
 .form p {
-  font-size: 13px;
+  font-size: 1rem;
   padding-right: 0.5rem;
 }
 
@@ -254,7 +254,7 @@ h3 {
 }
 
 .form2 p {
-  font-size: 13px;
+  font-size: 1rem;
 }
 
 .form2 a {
@@ -352,7 +352,7 @@ h3 {
 }
 
 .form3 p {
-  font-size: 13px;
+  font-size: 1rem;
 }
 
 .form3 a {
