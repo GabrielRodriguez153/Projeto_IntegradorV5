@@ -9,44 +9,21 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container2">
         <div class="login-section2">
             <div class="image-section2"></div>
             <img class="logo2" src="{{url_for('static', filename='imgs/logo-black.svg')}}" alt="Logo ANTVSN">
-            <hr>
             <h3>Crie sua Conta e Comece Agora!</h3>
-            <div class="step-indicator">
-                <span class="step-circle active">
-                    <p>1</p>
-                </span>
-                <span class="step-circle">
-                    <p>2</p>
-                </span>
-            </div>
-            <!-- <a href="{{url_for('login')}}" class="close"><i class="fa-solid fa-xmark fa-2xl"></i></a>
-            <h2>CADASTRO</h2>
-            <hr>
-            <form action="{{url_for('signup')}}" method="post">
-            <div class="input-field1">
-                <img src="{{url_for('static', filename='imgs/people-icon.svg')}}" alt="Email">
-                <input type="text" placeholder="Nome" name="nome">
-            </div>
-            <div class="input-field1">
-                <img src="{{url_for('static', filename='imgs/tel-icon.svg')}}" alt="Email">
-                <input type="text" placeholder="Telefone" name="telefone">
-            </div>
-            <div class="input-field1">
-                <img src="{{url_for('static', filename='imgs/email-icon.svg')}}" alt="Email">
-                <input type="email" placeholder="Email" name="email">
-            </div>
-            <div class="input-field2">
-                <img src="{{url_for('static', filename='imgs/lock-icon.svg')}}" alt="Email">
-                <input type="password" placeholder="Senha" name="password">
-            </div>
-            <a class="next" href="{{url_for('signup2')}}"><button class="signup-button">PRÓXIMO</button></a>
-        </form>
-        </div> -->
-
+            <form class="form2" action="{{url_for('signup')}}" method="POST">
+                <div class="group">
+                    <input type="text" name="nome" placeholder="Nome">
+                    <input type="tel" name="telefone" placeholder="Telefone">
+                </div>
+                <input type="email" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Senha">
+                <button>Próximo</button>
+                <p>Já faz parte da nossa Plataforma | <a href="{{url_for('login')}}">Faça o Login</a></p>
+            </form>
         </div>
 </body>
 <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>

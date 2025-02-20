@@ -1,73 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <title>AntraVision</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="image-section2">
-            <div class="logo">
-                <img src="{{url_for('static', filename='imgs/logo_white.svg')}}" alt="Logo ANTVSN">
-                <img src="{{url_for('static', filename='imgs/sub_logo_white.svg')}}" alt="Logo ANTVSN">
-            </div>
-        </div>
-        <div class="login-section">
-            <a href="{{url_for('login')}}" class="close"><i class="fa-solid fa-xmark fa-2xl"></i></a>
+    <div class="container2">
+        <div class="login-section2">
+            <div class="image-section2"></div>
+            <img class="logo2" src="{{url_for('static', filename='imgs/logo-black.svg')}}" alt="Logo ANTVSN">
+            <h3 class="tit1">Tudo certo! Finalize e acesse já!</h3>
+            <form class="form3" action="{{url_for('signup2')}}" method="POST">
+                <input type="text" name="logradouro" placeholder="Endereço">
+                <input type="text" name="cidade" placeholder="Cidade">
+                <div class="group1">
+                    <select name="estado">
+                        <option value="">Estado</option>
+                        <option value="Acre (AC)">Acre (AC)</option>
+                        <option value="Alagoas (AL)">Alagoas (AL)</option>
+                        <option value="Amapá (AP)">Amapá (AP)</option>
+                        <option value="Amazonas (AM)">Amazonas (AM)</option>
+                        <option value="Bahia (BA)">Bahia (BA)</option>
+                        <option value="Ceará (CE)">Ceará (CE)</option>
+                        <option value="Distrito Federal (DF)">Distrito Federal (DF)</option>
+                        <option value="Espírito Santo (ES)">Espírito Santo (ES)</option>
+                        <option value="Goiás (GO)">Goiás (GO)</option>
+                        <option value="Maranhão (MA)">Maranhão (MA)</option>
+                        <option value="Mato Grosso (MT)">Mato Grosso (MT)</option>
+                        <option value="Mato Grosso do Sul (MS)">Mato Grosso do Sul (MS)</option>
+                        <option value="Minas Gerais (MG)">Minas Gerais (MG)</option>
+                        <option value="Pará (PA)">Pará (PA)</option>
+                        <option value="Paraíba (PB)">Paraíba (PB)</option>
+                        <option value="Paraná (PR)">Paraná (PR)</option>
+                        <option value="Pernambuco (PE)">Pernambuco (PE)</option>
+                        <option value="Piauí (PI)">Piauí (PI)</option>
+                        <option value="Rio de Janeiro (RJ)">Rio de Janeiro (RJ)</option>
+                        <option value="Rio Grande do Norte (RN)">Rio Grande do Norte (RN)</option>
+                        <option value="Rio Grande do Sul (RS)">Rio Grande do Sul (RS)</option>
+                        <option value="Rondônia (RO)">Rondônia (RO)</option>
+                        <option value="Roraima (RR)">Roraima (RR)</option>
+                        <option value="Santa Catarina (SC)">Santa Catarina (SC)</option>
+                        <option value="São Paulo (SP)">São Paulo (SP)</option>
+                        <option value="Sergipe (SE)">Sergipe (SE)</option>
+                        <option value="Tocantins (TO)">Tocantins (TO)</option>
+                    </select>
+                    <input type="text" name="cep" placeholder=" CEP">
+                </div>
+                <button type="submit">Cadastre-se</button>
+                <p>Já faz parte da nossa Plataforma | <a href="{{url_for('login')}}">Faça o Login</a></p>
+            </form>
+            <!-- <a href="{{url_for('login')}}" class="close"><i class="fa-solid fa-xmark fa-2xl"></i></a>
             <h2>CADASTRO</h2>
             <hr>
             <form action="{{url_for('signup2')}}" method="post">
-            <div class="input-field3">
-                <img src="{{url_for('static', filename='imgs/location-icon.svg')}}" alt="Email">
-                <input type="text" placeholder="ENDEREÇO" name="logradouro">
-            </div>
-            <div class="input-field3">
-                <img src="{{url_for('static', filename='imgs/city-location.svg')}}" alt="Email">
-                <input type="text" placeholder="CIDADE" name="cidade">
-            </div>
-            <div class="input-field3">
-                <select name="estado">
-                    <option value="">Estado</option>
-                    <option value="Acre (AC)">Acre (AC)</option>
-                    <option value="Alagoas (AL)">Alagoas (AL)</option>
-                    <option value="Amapá (AP)">Amapá (AP)</option>
-                    <option value="Amazonas (AM)">Amazonas (AM)</option>
-                    <option value="Bahia (BA)">Bahia (BA)</option>
-                    <option value="Ceará (CE)">Ceará (CE)</option>
-                    <option value="Distrito Federal (DF)">Distrito Federal (DF)</option>
-                    <option value="Espírito Santo (ES)">Espírito Santo (ES)</option>
-                    <option value="Goiás (GO)">Goiás (GO)</option>
-                    <option value="Maranhão (MA)">Maranhão (MA)</option>
-                    <option value="Mato Grosso (MT)">Mato Grosso (MT)</option>
-                    <option value="Mato Grosso do Sul (MS)">Mato Grosso do Sul (MS)</option>
-                    <option value="Minas Gerais (MG)">Minas Gerais (MG)</option>
-                    <option value="Pará (PA)">Pará (PA)</option>
-                    <option value="Paraíba (PB)">Paraíba (PB)</option>
-                    <option value="Paraná (PR)">Paraná (PR)</option>
-                    <option value="Pernambuco (PE)">Pernambuco (PE)</option>
-                    <option value="Piauí (PI)">Piauí (PI)</option>
-                    <option value="Rio de Janeiro (RJ)">Rio de Janeiro (RJ)</option>
-                    <option value="Rio Grande do Norte (RN)">Rio Grande do Norte (RN)</option>
-                    <option value="Rio Grande do Sul (RS)">Rio Grande do Sul (RS)</option>
-                    <option value="Rondônia (RO)">Rondônia (RO)</option>
-                    <option value="Roraima (RR)">Roraima (RR)</option>
-                    <option value="Santa Catarina (SC)">Santa Catarina (SC)</option>
-                    <option value="São Paulo (SP)">São Paulo (SP)</option>
-                    <option value="Sergipe (SE)">Sergipe (SE)</option>
-                    <option value="Tocantins (TO)">Tocantins (TO)</option>
-                </select>
-            </div>
-            <div class="input-field3">
-                <img src="{{url_for('static', filename='imgs/location-icon.svg')}}" alt="Email">
-                <input type="text" pattern="\d{5}-\d{3}" placeholder="CEP" name="cep">
-            </div>
-            <a href="{{url_for('main')}}"><button class="signup-button">CADASTRAR</button></a>
-        </form>
+                <div class="input-field3">
+                    <img src="{{url_for('static', filename='imgs/location-icon.svg')}}" alt="Email">
+                    <input type="text" placeholder="endereço" name="logradouro">
+                </div>
+                <div class="input-field3">
+                    <img src="{{url_for('static', filename='imgs/city-location.svg')}}" alt="Email">
+                    <input type="text" placeholder="cidade" name="cidade">
+                </div>
+                <div class="input-field3">
+                    <select name="estado">
+                        <option value="">Estado</option>
+                        <option value="Acre (AC)">Acre (AC)</option>
+                        <option value="Alagoas (AL)">Alagoas (AL)</option>
+                        <option value="Amapá (AP)">Amapá (AP)</option>
+                        <option value="Amazonas (AM)">Amazonas (AM)</option>
+                        <option value="Bahia (BA)">Bahia (BA)</option>
+                        <option value="Ceará (CE)">Ceará (CE)</option>
+                        <option value="Distrito Federal (DF)">Distrito Federal (DF)</option>
+                        <option value="Espírito Santo (ES)">Espírito Santo (ES)</option>
+                        <option value="Goiás (GO)">Goiás (GO)</option>
+                        <option value="Maranhão (MA)">Maranhão (MA)</option>
+                        <option value="Mato Grosso (MT)">Mato Grosso (MT)</option>
+                        <option value="Mato Grosso do Sul (MS)">Mato Grosso do Sul (MS)</option>
+                        <option value="Minas Gerais (MG)">Minas Gerais (MG)</option>
+                        <option value="Pará (PA)">Pará (PA)</option>
+                        <option value="Paraíba (PB)">Paraíba (PB)</option>
+                        <option value="Paraná (PR)">Paraná (PR)</option>
+                        <option value="Pernambuco (PE)">Pernambuco (PE)</option>
+                        <option value="Piauí (PI)">Piauí (PI)</option>
+                        <option value="Rio de Janeiro (RJ)">Rio de Janeiro (RJ)</option>
+                        <option value="Rio Grande do Norte (RN)">Rio Grande do Norte (RN)</option>
+                        <option value="Rio Grande do Sul (RS)">Rio Grande do Sul (RS)</option>
+                        <option value="Rondônia (RO)">Rondônia (RO)</option>
+                        <option value="Roraima (RR)">Roraima (RR)</option>
+                        <option value="Santa Catarina (SC)">Santa Catarina (SC)</option>
+                        <option value="São Paulo (SP)">São Paulo (SP)</option>
+                        <option value="Sergipe (SE)">Sergipe (SE)</option>
+                        <option value="Tocantins (TO)">Tocantins (TO)</option>
+                    </select>
+                </div>
+                <div class="input-field3">
+                    <img src="{{url_for('static', filename='imgs/location-icon.svg')}}" alt="Email">
+                    <input type="text" pattern="\d{5}-\d{3}" placeholder="CEP" name="cep">
+                </div>
+                <a href="{{url_for('main')}}"><button class="signup-button">CADASTRAR</button></a>
+            </form>
+        </div> -->
+
         </div>
-       
-    </div>
 </body>
 <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
+
 </html>
