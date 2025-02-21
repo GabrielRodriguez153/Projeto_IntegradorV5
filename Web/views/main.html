@@ -9,7 +9,12 @@
 <body>
     <div class="container">
         <nav class="sidebar">
-             <img src="{{url_for('static', filename='imgs/logo_green.svg')}}">
+            <div class="top">
+                <img src="{{url_for('static', filename='imgs/logo-white2.svg')}}">
+                <div class="btnClose"><img src="{{url_for('static', filename='imgs/seta.svg')}}"></div>
+            </div>
+            <div class="lin"></div>
+             <!-- <img src="{{url_for('static', filename='imgs/logo_green.svg')}}"> -->
             <!--<div class="line"></div>
             <ul>
                 <li><a href="{{url_for('main')}}" id="dashboardLink"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
@@ -30,7 +35,8 @@
                     <h1>{{ total }}</h1>
                     
                 </div>
-                <div class="info">
+                <div cl
+                ass="info">
                     <h4>Hectares Afetados</h4>
                     <h1>{{ hectares_afetados }}</h1>
                 </div>
