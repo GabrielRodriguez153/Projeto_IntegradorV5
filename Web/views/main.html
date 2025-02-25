@@ -8,12 +8,27 @@
 </head>
 <body>
     <div class="container">
-        <nav class="sidebar">
-            <div class="top">
-                <img src="{{url_for('static', filename='imgs/logo-white2.svg')}}">
-                <div class="btnClose"><img src="{{url_for('static', filename='imgs/seta.svg')}}"></div>
+        <div class="sidebar">
+            <img src="{{url_for('static', filename='imgs/logo_white.svg')}}" alt="Logo AntraVision">
+            <span class="menu-category">Menu</span>
+            <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href="#"><i class="fas fa-chart-bar"></i> Dashboard</a>
+            <a href="#"><i class="fas fa-folder"></i> Histórico</a>
+            <a href="#"><i class="fas fa-cogs"></i> Configurações</a>
+            <div class="user-section">
+                <img src="https://via.placeholder.com/40" alt="Usuário">
+                <span>Gabriel</span>
             </div>
-            <div class="lin"></div>
+        </div>
+        
+        <div class="navbar">
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Pesquisar...">
+            </div>
+            <i class="fas fa-user-circle fa-2x"></i>
+        </div>
+    
              <!-- <img src="{{url_for('static', filename='imgs/logo_green.svg')}}"> -->
             <!--<div class="line"></div>
             <ul>
@@ -21,8 +36,6 @@
                 <li><a href="{{url_for('history')}}" id="relatorioLink"><i class="fa-solid fa-file-lines"></i> Históricos</a></li>
                 <li><a href="{{url_for('perfil')}}?user_id={{user_id}}" id="profileLink"><i class="fa-solid fa-user"></i> Perfil</a></li>
             </ul> -->
-        </nav>
-        
         <!-- <main class="main-content">
             <p class="first_text">Olá, {{ user_name }}</p>
             <h2 class="welcome">Seja Bem-Vindo ao AntraVision</h2>
