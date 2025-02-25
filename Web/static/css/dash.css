@@ -16,50 +16,89 @@ body {
   height: 100vh;
 }
 
-.sidebar {
-  width: 280px;
-  background-color: #1b4332;
-  color: white;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  height: 100%;
-  transition: width 0.3s ease;
-}
 .sidebar img {
   width: 127px;
   border-radius: 50%;
   margin-bottom: 15px;
   align-self: center;
 }
+
+.sidebar {
+  width: 280px;
+  background-color: #1A5319;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+}
+
 .sidebar a {
   width: 100%;
   color: white;
   text-decoration: none;
-  padding: 12px;
+  padding: 15px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 8px; /* Espaço entre ícone e texto */
   border-radius: 8px;
+  transition: background 0.3s ease, transform 0.1s ease-in-out;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.icon-box {
+  width: 50px;
+  height: 50px;
+  background-color: #256D26; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px; 
   transition: background 0.3s ease;
 }
-.sidebar a:hover, .sidebar .active {
-  background-color: #40916c;
+
+.icon-box i {
+  font-size: 1.5em;
+  color: white;
+  transition: color 0.3s ease;
 }
+
+.sidebar a:hover .icon-box {
+  background-color: #CAE0BC; 
+  color: #1A5319;
+}
+
+.sidebar i:hover{
+  color: #1A5319; 
+}
+
+.sidebar a:hover span {
+  color: #CAE0BC; 
+  font-weight: 700;
+}
+
 .menu-category {
-  font-size: 0.9em;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  margin: 10px 0 5px;
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  margin: 10px 0 20px;
   opacity: 0.7;
+  padding-top: 1rem;
 }
 .user-section {
   margin-top: auto;
-  padding: 15px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 1);
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 23px;
+  width: 100%;
+  font-size: 1.3rem;
 }
 .user-section img {
   width: 40px;
@@ -85,12 +124,54 @@ body {
   background: #f0f0f0;
   padding: 5px 10px;
   border-radius: 8px;
+  height: 2.5rem;
+  width: 20rem;
 }
 .navbar input {
   border: none;
   background: none;
   outline: none;
-  margin-left: 5px;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.navbar i{
+  color: #1A5319;
+}
+
+.user{
+  color: #1A5319;
+  cursor: pointer;
+  width: 20px;
+}
+
+.content {
+  display: flex;
+      align-items: center;
+      margin-left: 45%;
+      text-align: center;
+}
+.section {
+  display: block;
+}
+
+.title {
+  font-size: 2.5em;
+  color: #1b4332;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.highlight {
+  background-color: #1A5319;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* .dashboard-content {

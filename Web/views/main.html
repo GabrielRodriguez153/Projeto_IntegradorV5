@@ -1,89 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/dash.css')}}">
     <title>AntraVision</title>
 </head>
+
 <body>
     <div class="container">
         <div class="sidebar">
             <img src="{{url_for('static', filename='imgs/logo_white.svg')}}" alt="Logo AntraVision">
-            <span class="menu-category">Menu</span>
-            <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
-            <a href="#"><i class="fas fa-chart-bar"></i> Dashboard</a>
-            <a href="#"><i class="fas fa-folder"></i> Histórico</a>
-            <a href="#"><i class="fas fa-cogs"></i> Configurações</a>
+            <span class="menu-category"></span>
+            <a href="#" class="active">
+                <div class="icon-box"><i class="fas fa-home"></i></div>
+                <span>Home</span>
+            </a>
+            <a href="#">
+                <div class="icon-box"><i class="fas fa-chart-bar"></i></div>
+                <span>Dashboard</span>
+            </a>
+            <a href="#">
+                <div class="icon-box"><i class="fas fa-folder"></i></div>
+                <span>Histórico</span>
+            </a>
+            <a href="#">
+                <div class="icon-box"><i class="fas fa-cogs"></i></div>
+                <span>Configurações</span>
+            </a>
             <div class="user-section">
-                <img src="https://via.placeholder.com/40" alt="Usuário">
-                <span>Gabriel</span>
+                <i class="fa-solid fa-user"></i>
+                <span>Olá, {{ user_name }}</span>
+                <div id="user-info" data-user-id="{{user_id}}" style="display: none;"></div>
             </div>
         </div>
-        
+
         <div class="navbar">
             <div class="search">
-                <i class="fas fa-search"></i>
+                <i class="fas fa-search fa-xl"></i>
                 <input type="text" placeholder="Pesquisar...">
             </div>
-            <i class="fas fa-user-circle fa-2x"></i>
+            <i class="fa-solid fa-user-large fa-xl"></i>
         </div>
-    
-             <!-- <img src="{{url_for('static', filename='imgs/logo_green.svg')}}"> -->
-            <!--<div class="line"></div>
-            <ul>
-                <li><a href="{{url_for('main')}}" id="dashboardLink"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
-                <li><a href="{{url_for('history')}}" id="relatorioLink"><i class="fa-solid fa-file-lines"></i> Históricos</a></li>
-                <li><a href="{{url_for('perfil')}}?user_id={{user_id}}" id="profileLink"><i class="fa-solid fa-user"></i> Perfil</a></li>
-            </ul> -->
-        <!-- <main class="main-content">
-            <p class="first_text">Olá, {{ user_name }}</p>
-            <h2 class="welcome">Seja Bem-Vindo ao AntraVision</h2>
-            <div id="user-info" data-user-id="{{user_id}}" style="display: none;"></div>
-            
 
-            <div class="sub-content">
-                <div class="info">
-                    <h4>Total de Casos</h4>
-                    <h1>{{ total }}</h1>
-                    
-                </div>
-                <div cl
-                ass="info">
-                    <h4>Hectares Afetados</h4>
-                    <h1>{{ hectares_afetados }}</h1>
-                </div>
-                <div class="info">
-                    <h4>Nível Médio de Severidade</h4>
-                    <h1 class="ex">{{ nivel_severidade }}</h1>
-                </div>
+        <div class="content">
+            <div id="home" class="section">
+                <h1 class="title">Bem-vindo ao AntraVision</h1>
+                <p>Sistema de monitoramento de antracnose</p>
+                <div class="highlight">Visualização de Dados e Análises</div>
             </div>
-            <div class="graph-container">
-            <canvas id="myChart"></canvas>
-            <div class="dashboard-content">
-                <div class="cards">
-                  <div class="card"><h3>Região Sul <hr></h3>  <p>{{ regioes["Região Sul"] }}</p> </div>
-                  <div class="card"><h3>Região Norte <hr></h3> <p>{{ regioes["Região Norte"] }}</p> </div>
-                  <div class="card"><h3>Região Leste <hr></h3> <p>{{ regioes["Região Leste"] }}</p> </div>
-                  <div class="card"><h3>Região Oeste <hr></h3> <p>{{ regioes["Região Oeste"] }}</p> </div>
-                  <div class="card"><h3>Região Central <hr></h3> <p>{{ regioes["Região Central"] }}</p> </div>
-                </div>
-              
-                <div id="notifications" class="notification-panel">
-                  <h3>Notificações</h3>
-                  <ul id="notification-list">
-                  </ul>
-                  <button id="clear-notifications" class="btn-clear">Limpar Notificações</button>
-                </div>
-              </div> -->
-              
-        </div>
 
-    <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="{{url_for('static', filename='js/graph.js')}}"></script>
-    <script src="{{url_for('static', filename='js/notifications.js')}}"></script>
-      
+        </div>
+        <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="{{url_for('static', filename='js/graph.js')}}"></script>
+        <script src="{{url_for('static', filename='js/notifications.js')}}"></script>
+
 
 </body>
+
 </html>
