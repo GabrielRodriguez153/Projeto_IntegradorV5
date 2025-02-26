@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/dash.css')}}">
+  <title>AntraVision</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <img src="{{url_for('static', filename='imgs/logo_white.svg')}}" alt="Logo AntraVision">
+      <span class="menu-category"></span>
+      <a href="{{url_for('main')}}">
+        <div class="icon-box"><i class="fas fa-home"></i></div>
+        <span>Home</span>
+      </a>
+      <a href="{{url_for('dash')}}">
+        <div class="icon-box"><i class="fas fa-chart-bar"></i></div>
+        <span>Dashboard</span>
+      </a>
+      <a href="#">
+        <div class="icon-box"><i class="fas fa-folder"></i></div>
+        <span>Histórico</span>
+      </a>
+      <a href="#">
+        <div class="icon-box"><i class="fas fa-cogs"></i></div>
+        <span>Configurações</span>
+      </a>
+    </div>
+
+    <div class="navbar">
+      <div class="search">
+        <i class="fas fa-search fa-xl"></i>
+        <input type="text" placeholder="Pesquisar...">
+      </div>
+      <div class="user-section">
+        <span>Olá, {{ user_name }}</span>
+        <div id="user-info" data-user-id="{{user_id}}" style="display: none;"></div>
+        <i class="fa-solid fa-user-large fa-xl"></i>
+      </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{url_for('static', filename='js/graph.js')}}"></script>
+<script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
+
+</html>

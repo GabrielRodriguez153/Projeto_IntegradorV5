@@ -47,7 +47,6 @@ def init_app(app):
                 return redirect(url_for('signup'))
         return render_template('signup.html')
     
-    
     @app.route('/signup2', methods=['GET', 'POST'])
     def signup2():
         if request.method == 'POST':
@@ -78,22 +77,29 @@ def init_app(app):
         user_id = session["user_id"]
         try:
             total = DadosService.get_casos_recentes() 
-            hectares_afetados = DadosService.get_hectares_afetados()  
-            nivel_severidade = DadosService.get_nivel_severidade_mais_frequente() 
+            nivel_severidade = DadosService.get_nivel_severidade_mais_frequente()  
+
+        except Exception as e:
+            casos_recentes = 0
+            
+        return render_template("main.html", user_name=user_name, user_id=user_id, total=total, 
+                           nivel_severidade=nivel_severidade)
+    
+    @app.route('/dashboard')
+    def dash():
+        user_name = session.get('user_name')
+        user_id = session["user_id"]
+        try:
             grafico_dados = DadosService.get_dados_grafico() 
             
             regioes = {dado["_id"]: dado["totalPlantacoes"] for dado in grafico_dados}
 
         except Exception as e:
-            casos_recentes = 0
             grafico_dados = []
-            
-        return render_template("main.html", user_name=user_name, user_id=user_id, total=total, 
-                           hectares_afetados=hectares_afetados,
-                           nivel_severidade=nivel_severidade,
-                           grafico_dados=grafico_dados,
-                           regioes=regioes)
- 
+
+        return render_template("dash.html", user_name=user_name, user_id=user_id, grafico_dados=grafico_dados, regioes=regioes)
+
+
     @app.route('/dados-grafico', methods=['GET'])
     def dados_grafico():
         try:

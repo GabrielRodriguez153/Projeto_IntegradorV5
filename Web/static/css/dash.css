@@ -24,7 +24,7 @@ body {
 
 .sidebar {
   width: 200px;
-  background-color: #1A5319;
+  background-color: #1a5319;
   color: white;
   padding: 20px;
   display: flex;
@@ -45,18 +45,18 @@ body {
   gap: 8px;
   border-radius: 8px;
   transition: background 0.3sease, transform 0.1sease-in-out;
-  font-size: .9rem;
+  font-size: 0.9rem;
   margin-bottom: 15px;
 }
 
 .icon-box {
   width: 50px;
   height: 50px;
-  background-color: #256D26; 
+  background-color: #256d26;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 8px; 
+  border-radius: 8px;
   transition: background 0.3s ease;
 }
 
@@ -67,27 +67,19 @@ body {
 }
 
 .sidebar a:hover .icon-box {
-  background-color: #CAE0BC; 
-  color: #1A5319;
+  background-color: #cae0bc;
+  color: #1a5319;
 }
 
-.sidebar i:hover{
-  color: #1A5319; 
+.sidebar i:hover {
+  color: #1a5319;
 }
 
 .sidebar a:hover span {
-  color: #CAE0BC; 
+  color: #cae0bc;
   font-weight: 700;
 }
 
-.menu-category {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  border-top: 1px solid rgba(255, 255, 255, 1);
-  margin: 10px 0 20px;
-  opacity: 0.7;
-  padding-top: 1rem;
-}
 .user-section {
   margin-top: auto;
   padding: 22px;
@@ -149,74 +141,25 @@ body {
   outline: none;
   margin-left: 1rem;
   font-size: 1rem;
-
 }
 
-.navbar i{
-  color: #1A5319;
+.navbar i {
+  color: #1a5319;
 }
 
-.user{
-  color: #1A5319;
+.user {
+  color: #1a5319;
   cursor: pointer;
   width: 20px;
 }
 
-.info-bar {
-  margin: 1rem 0;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  font-weight: bold;
-}
-
-.info-bar span {
-  background-color: #97da97;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  color: #2e5d2c;
-}
-
-.content {
-  display: flex;
-  align-items: center;
-  margin-left: 38%;
-  text-align: center;
-  flex-direction: row;
-  justify-content: center;
-}
-.section {
-  display: block;
-  margin-top: 4rem;
-}
-
-.title {
-  font-size: 2.8em;
-  color: #1A5319;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.subtitle{
-  font-size: 1.3rem;
-}
-
-.highlight {
-  background-color: #1A5319;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-size: 1.2em;
-  text-align: center;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.logo-main{
-  margin-bottom: 2rem;
-  width: 14rem;
+.menu-category {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  margin: 10px 0 20px;
+  opacity: 0.7;
+  padding-top: 1rem;
 }
 
 /* .dashboard-content {
