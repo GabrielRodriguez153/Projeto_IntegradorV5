@@ -26,7 +26,7 @@ body {
   width: 200px;
   background-color: #1a5319;
   color: white;
-  padding: 20px;
+  padding: 30px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,6 +97,7 @@ body {
   gap: 16px;
   width: 100%;
   font-size: 1rem;
+  cursor: pointer;
 }
 .user-section img {
   width: 40px;
@@ -151,9 +152,30 @@ body {
   font-size: 1rem;
 }
 
-.navbar i {
+.atualizar{
+  width: 200px;
+  background-color: #1a5319;
+  height: 40px;
+  color: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+.atualizar:hover{
+  background-color: #c3dfc3;
+  color: #1a5319;
+  transition: all .5s;
+  font-weight: 700;
+}
+
+.fa-user-large {
   color: #1a5319;
 }
+
 
 .user {
   color: #1a5319;
@@ -178,6 +200,7 @@ body {
   font-size: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  width: 100%;
 }
 
 .info-bar i {
@@ -229,7 +252,7 @@ body {
   background: #c3dfc3;
   border-radius: 12px;
   padding: 1.4rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 3px 3px rgba(105, 121, 105, 0.3);
   transition: transform 0.3s;
   text-align: start;
   width: 21rem;
@@ -238,6 +261,7 @@ body {
 
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0px 0px 7px 1px rgba(178,204,179,1);
 }
 
 .card h2 {
