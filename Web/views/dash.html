@@ -32,16 +32,56 @@
     </div>
 
     <div class="navbar">
-      <div class="search">
-        <i class="fas fa-search fa-xl"></i>
-        <input type="text" placeholder="Pesquisar...">
-      </div>
       <div class="user-section">
         <span>Olá, {{ user_name }}</span>
         <div id="user-info" data-user-id="{{user_id}}" style="display: none;"></div>
         <i class="fa-solid fa-user-large fa-xl"></i>
       </div>
     </div>
+
+  <div class="dash-content">
+      <div class="filter-section">
+        <label for="regionFilter">Filtrar por Região:</label>
+        <select id="regionFilter">
+          <option value="">Todas</option>
+          <option value="Região Norte">Região Norte</option>
+          <option value="Região Sul">Região Sul</option>
+          <option value="Região Leste">Região Leste</option>
+          <option value="Região Oeste">Região Oeste</option>
+          <option value="Região Central">Região Central</option>
+        </select>
+        <label for="dateFilter">Data:</label>
+        <input type="date" id="dateFilter" />
+        <button id="applyFilter" class="btnFiltrar">Filtrar</button>
+      </div>
+
+      <div class="group1">
+        <div class="chart">
+          <h2>Gráfico de Evolução</h2>
+          <div class="place">Test</div>
+        </div>
+        <div class="notifications">
+          <h2>Notificações</h2>
+          <div class="place">Test</div>
+        </div>
+      </div>
+
+      <div class="group2">
+        <div class="card">
+          <h3>Total de Mudas</h3>
+          <div id="totalMudas" class="placeholder">Carregando...</div>
+        </div>
+        <div class="card">
+          <h3>Casos de Antracnose</h3>
+          <div id="casosAntracnose" class="placeholder">Carregando...</div>
+        </div>
+        <div class="card">
+          <h3>Status de Risco</h3>
+          <div id="statusRisco" class="placeholder">Carregando...</div>
+        </div>
+      </div>
+
+  </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="{{url_for('static', filename='js/graph.js')}}"></script>

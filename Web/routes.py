@@ -112,7 +112,7 @@ def init_app(app):
         except Exception as e:
             return jsonify({"error": str(e)}), 500
         
-        return render_template("main.html", user_name=user_name, user_id=user_id)
+        return render_template("dash.html", user_name=user_name, user_id=user_id)
     
 
     @app.route('/history', methods=['GET'])
