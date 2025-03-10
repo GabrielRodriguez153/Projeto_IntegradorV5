@@ -85,6 +85,13 @@ def init_app(app):
         return render_template("main.html", user_name=user_name, user_id=user_id, total=total, 
                            nivel_severidade=nivel_severidade)
     
+    @app.route('/settings')
+    def setting():
+        user_name = session.get('user_name')
+        user_id = session["user_id"] 
+
+        return render_template("settings.html", user_name=user_name, user_id=user_id)
+
     @app.route('/dashboard')
     def dash():
         user_name = session.get('user_name')

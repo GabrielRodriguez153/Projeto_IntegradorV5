@@ -149,16 +149,16 @@ body {
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 789px;
+  max-width: 100%;
   margin-top: 4rem;
-  margin-left: 22%;
   height: 6rem;
+  justify-content: space-between;
 }
 .filters label {
   font-weight: bold;
   color: #2c6e49;
-  font-size: 14px;
-  margin-top: -9px;
+  font-size: 17px;
+  margin-right: 2rem;
 }
 
 .filters input[type="text"],
@@ -173,6 +173,7 @@ body {
   width: 165px;
   height: 45px;
   outline: none;
+  margin-left: 1rem;
 }
 
 .filters input[type="date"]:focus,
@@ -190,7 +191,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 6px;
+  height: 45px;
 }
 
 .filter-button i {

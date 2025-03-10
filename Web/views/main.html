@@ -14,22 +14,22 @@
             <img src="{{url_for('static', filename='imgs/logo_white.svg')}}" alt="Logo AntraVision">
             <span class="menu-category"></span>
             <a href="{{url_for('main')}}">
-                <div class="icon-box"><i class="fas fa-home"></i></div>
-                <span>Home</span>
+              <div class="icon-box"><i class="fas fa-home"></i></div>
+              <span>Home</span>
             </a>
             <a href="{{url_for('dash')}}">
-                <div class="icon-box"><i class="fas fa-chart-bar"></i></div>
-                <span>Dashboard</span>
+              <div class="icon-box"><i class="fas fa-chart-bar"></i></div>
+              <span>Dashboard</span>
             </a>
-            <a href="#">
-                <div class="icon-box"><i class="fas fa-folder"></i></div>
-                <span>Histórico</span>
+            <a href="{{url_for('history')}}">
+              <div class="icon-box"><i class="fas fa-folder"></i></div>
+              <span>Histórico</span>
             </a>
-            <a href="#">
-                <div class="icon-box"><i class="fas fa-cogs"></i></div>
-                <span>Configurações</span>
+            <a href="{{url_for('setting')}}">
+              <div class="icon-box"><i class="fas fa-cogs"></i></div>
+              <span>Configurações</span>
             </a>
-        </div>
+          </div>
 
         <div class="navbar">
             <div class="atualizar">Atualizar</div>
