@@ -109,39 +109,7 @@ body {
   transition: left 0.3sease;
   border-radius: 0 0 20px 20px;
 }
-.navbar .search {
-  display: flex;
-  align-items: center;
-  background: #f0f0f0;
-  padding: 5px 10px;
-  border-radius: 8px;
-  height: 2.5rem;
-  width: 20rem;
-  border: 2px solid #ccc;
-}
 
-.navbar .search:focus {
-  border-color: #1a5319;
-  box-shadow: 0 0 8px rgba(26, 83, 25, 0.4);
-  background-color: #fff;
-}
-
-.navbar .search::placeholder {
-  color: #999;
-  transition: all 0.3s ease;
-}
-
-.navbar .search:focus::placeholder {
-  color: #666;
-}
-
-.navbar input {
-  border: none;
-  background: none;
-  outline: none;
-  margin-left: 1rem;
-  font-size: 1rem;
-}
 
 .navbar i {
   color: #1a5319;
@@ -151,6 +119,12 @@ body {
   color: #1a5319;
   cursor: pointer;
   width: 20px;
+}
+
+.titl {
+  color: #31511e;
+  margin-left: 6px;
+  font-size: 1.5rem;
 }
 
 .menu-category {
@@ -292,7 +266,7 @@ body {
   text-align: center;
 }
 .group2 .card .placeholder {
-  background: #eee;
+  background: #eee; 
   border-radius: 8px;
   height: 50px;
   display: flex;

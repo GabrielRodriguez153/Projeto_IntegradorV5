@@ -1,140 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/history.css')}}">  
-    <link rel="stylesheet" href="{{url_for('static', filename='css/modal.css')}}">   
+    <link rel="stylesheet" href="{{url_for('static', filename='css/history.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/modal.css')}}">
     <title>AntraVision</title>
 </head>
+
 <body>
     <div class="container">
-        <aside class="sidebar">
-            <img src="{{url_for('static', filename='imgs/logo-white2.svg')}}">
-            <div class="line"></div>
-            <ul>
-                <li><a href="{{url_for('main')}}" id="dashboardLink"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
-                <li><a href="{{url_for('history')}}" id="relatorioLink"><i class="fa-solid fa-file-lines"></i> Históricos</a></li>
-                <li><a href="{{url_for('perfil')}}" id="profileLink"><i class="fa-solid fa-user"></i> Perfil</a></li>
-            </ul>
-        </aside>
+        <div class="sidebar">
+            <img src="{{url_for('static', filename='imgs/logo_white.svg')}}" alt="Logo AntraVision">
+            <span class="menu-category"></span>
+            <a href="{{url_for('main')}}">
+              <div class="icon-box"><i class="fas fa-home"></i></div>
+              <span>Home</span>
+            </a>
+            <a href="{{url_for('dash')}}">
+              <div class="icon-box"><i class="fas fa-chart-bar"></i></div>
+              <span>Dashboard</span>
+            </a>
+            <a href="{{url_for('history')}}">
+              <div class="icon-box"><i class="fas fa-folder"></i></div>
+              <span>Histórico</span>
+            </a>
+            <a href="#">
+              <div class="icon-box"><i class="fas fa-cogs"></i></div>
+              <span>Configurações</span>
+            </a>
+          </div>
+      
+          <div class="navbar">
+            <h1 class="titl">Histórico de Detecções</h1>
+            <div class="user-section">
+              <span>Olá, {{ user_name }}</span>
+              <div id="user-info" data-user-id="{{user_id}}" style="display: none;"></div>
+              <i class="fa-solid fa-user-large fa-xl"></i>
+            </div>
+          </div>
         <div class="main-history">
-        <h1 class="titl">Histórico de Detecções</h1>
-        <form action="{{url_for('history')}}" method="get">
-        <div class="filters">
-            <label>Data da Detecção: <input type="text" name="startDate"></label>
-            <label>Proprietário: <input type="text" name="owner"></label>
-            <label>Localização:
-                <select name="location">
-                    <option value="">Todas</option>
-                    <option value="Região Norte">Região Norte</option>
-                    <option value="Região Sul">Região Sul</option>
-                    <option value="Região Leste">Região Leste</option>
-                    <option value="Região Oeste">Região Oeste</option>
-                    <option value="Região Central">Região Central</option>
-                </select>
-            </label>
-            <button class="filter-button"><i class="fa-solid fa-filter"></i> Filtrar</button>
-        </div>
-      </form>
-        <div class="historico-container">
-            <table class="table-historico">
-              <thead>
-                <tr>
-                  <th>Data da Detecção</th>
-                  <th>Localização</th>
-                  <th>Nível de Infestação</th>
-                  <th>Status da Pupunheira</th>
-                  <th>Observações</th>
-                  <th>Proprietário</th>
-                  <th>Hectares</th>
-                  <th>Ações</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for item in historico %}
-                <tr>
-                  <td>{{ item.dataDeteccao }}</td>
-                  <td>{{ item.localizacao }}</td>
-                  <td>{{ item.nivelInfestacao }}</td>
-                  <td>{{ item.status }}</td>
-                  <td>{{ item.observacoes }}</td>
-                  <td>{{ item.proprietario }}</td>
-                  <td>{{ item.hectares }}</td>
-                  <td>
-                      <button type="submit" class="btn-acao btn-editar"  data-id="{{item._id}}">
-                        <i class="fa-solid fa-pencil"></i>
-                      </button>
+            <form action="{{url_for('history')}}" method="get">
+                <div class="filters">
+                    <label>Data da Detecção: <input type="text" name="startDate"></label>
+                    <label>Proprietário: <input type="text" name="owner"></label>
+                    <label>Localização:
+                        <select name="location">
+                            <option value="">Todas</option>
+                            <option value="Região Norte">Região Norte</option>
+                            <option value="Região Sul">Região Sul</option>
+                            <option value="Região Leste">Região Leste</option>
+                            <option value="Região Oeste">Região Oeste</option>
+                            <option value="Região Central">Região Central</option>
+                        </select>
+                    </label>
+                    <button class="filter-button"><i class="fa-solid fa-filter"></i> Filtrar</button>
+                </div>
+            </form>
+            <div class="historico-container">
+                <table class="table-historico">
+                    <thead>
+                        <tr>
+                            <th>Data da Detecção</th>
+                            <th>Localização</th>
+                            <th>Nível de Infestação</th>
+                            <th>Status da Pupunheira</th>
+                            <th>Observações</th>
+                            <th>Proprietário</th>
+                            <th>Hectares</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in historico %}
+                        <tr>
+                            <td>{{ item.dataDeteccao }}</td>
+                            <td>{{ item.localizacao }}</td>
+                            <td>{{ item.nivelInfestacao }}</td>
+                            <td>{{ item.status }}</td>
+                            <td>{{ item.observacoes }}</td>
+                            <td>{{ item.proprietario }}</td>
+                            <td>{{ item.hectares }}</td>
+                            <td>
+                                <button type="submit" class="btn-acao btn-editar" data-id="{{item._id}}">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </button>
 
-                      <form action="{{ url_for('delete_history', id=item._id) }}" method="post" style="display:inline;" id="delete-form">
-                        <button type="button" class="btn-acao btn-deletar" onclick="openPopup()">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    </form>
-    
-                    <div id="popup" class="popup-overlay" style="display: none;">
-                        <div class="popup-content">
-                            <h2>Confirmação de Exclusão</h2>
-                            <p>Tem certeza que deseja excluir este registro?</p>
-                            <div class="popup-buttons">
-                                <button type="button" onclick="closePopup()" class="btn-cancelar">Cancelar</button>
-                                <button type="button" onclick="confirmDeletion()" class="btn-confirmar">Confirmar</button>
+                                <form action="{{ url_for('delete_history', id=item._id) }}" method="post" style="display:inline;" id="delete-form">
+                                    <button type="button" class="btn-acao btn-deletar" onclick="openPopup()">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
+
+                                <div id="popup" class="popup-overlay" style="display: none;">
+                                    <div class="popup-content">
+                                        <h2>Confirmação de Exclusão</h2>
+                                        <p>Tem certeza que deseja excluir este registro?</p>
+                                        <div class="popup-buttons">
+                                            <button type="button" onclick="closePopup()" class="btn-cancelar">Cancelar</button>
+                                            <button type="button" onclick="confirmDeletion()" class="btn-confirmar">Confirmar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+
+                <div class="modal" id="editModal">
+                    <div class="modal-content">
+                        <span class="close-btn" id="closeModal">&times;</span>
+                        <h2>Editar Registro</h2>
+                        <br>
+                        <form id="editForm" method="post" action="{{ url_for('edit_history') }}">
+                            <input type="hidden" id="edit-id" name="id">
+                            <div class="form-group">
+                                <label for="edit-data-deteccao">Data da Detecção:</label>
+                                <input type="text" name="data_deteccao" id="edit-data-deteccao" class="form-control">
                             </div>
-                        </div>
+                            <div class="form-group">
+                                <label for="edit-localizacao">Localização:</label>
+                                <input type="text" name="localizacao" id="edit-localizacao" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-nivel-infestacao">Nível de Infestação:</label>
+                                <input type="text" name="nivel_infestacao" id="edit-nivel-infestacao" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-status-pupunheira">Status:</label>
+                                <input type="text" name="status_pupunheira" id="edit-status-pupunheira" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-observacoes">Observações:</label>
+                                <input type="text" name="observacoes" id="edit-observacoes" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-proprietario">Proprietário:</label>
+                                <input type="text" name="proprietario" id="edit-proprietario" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-hectares">Hectares:</label>
+                                <input type="text" name="hectares" id="edit-hectares" class="form-control">
+                            </div>
+                            <button type="submit" id="saveChanges" class="btn-save">Salvar</button>
+                        </form>
                     </div>
-                  </td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table>
-
-            
-<div class="modal" id="editModal">
-  <div class="modal-content">
-      <span class="close-btn" id="closeModal">&times;</span>
-      <h2>Editar Registro</h2>
-      <br>
-      <form id="editForm" method="post" action="{{ url_for('edit_history') }}">
-          <input type="hidden" id="edit-id" name="id">
-          <div class="form-group">
-              <label for="edit-data-deteccao">Data da Detecção:</label>
-              <input type="text" name="data_deteccao" id="edit-data-deteccao" class="form-control">
-          </div>
-          <div class="form-group">
-              <label for="edit-localizacao">Localização:</label>
-              <input type="text" name="localizacao" id="edit-localizacao" class="form-control">
-          </div>
-          <div class="form-group">
-              <label for="edit-nivel-infestacao">Nível de Infestação:</label>
-              <input type="text" name="nivel_infestacao" id="edit-nivel-infestacao" class="form-control">
-          </div>
-          <div class="form-group">
-              <label for="edit-status-pupunheira">Status:</label>
-              <input type="text" name="status_pupunheira" id="edit-status-pupunheira" class="form-control">
-          </div>
-          <div class="form-group">
-              <label for="edit-observacoes">Observações:</label>
-              <input type="text" name="observacoes" id="edit-observacoes" class="form-control">
-          </div>
-          <div class="form-group">
-              <label for="edit-proprietario">Proprietário:</label>
-              <input type="text" name="proprietario" id="edit-proprietario" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="edit-hectares">Hectares:</label>
-            <input type="text" name="hectares" id="edit-hectares" class="form-control">
+                </div>
+            </div>
         </div>
-          <button type="submit" id="saveChanges" class="btn-save">Salvar</button>
-      </form>
-  </div>
-</div>  
-          </div>
-    </div>
     </div>
     </div>
     <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
     <script src="{{url_for('static', filename='js/modal.js')}}"></script>
 
 </body>
+
 </html>
-    

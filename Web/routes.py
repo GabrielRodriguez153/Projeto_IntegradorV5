@@ -117,7 +117,9 @@ def init_app(app):
 
     @app.route('/history', methods=['GET'])
     def history():
-        
+        user_name = session.get('user_name')
+        user_id = session["user_id"]
+
         data_inicial = request.args.get('startDate')
         proper = request.args.get('owner')
         localizacao = request.args.get('location')
@@ -132,7 +134,7 @@ def init_app(app):
             historico = [d for d in historico if d['localizacao'] == localizacao]
         
         
-        return render_template('history.html', historico=historico)
+        return render_template('history.html', historico=historico,user_name=user_name, user_id=user_id)
     
     @app.route('/history/edit', methods=['POST'])
     def edit_history():

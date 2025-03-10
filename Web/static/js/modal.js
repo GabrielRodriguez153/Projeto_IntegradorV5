@@ -1,4 +1,3 @@
-// Abrir o modal
 document.querySelectorAll(".btn-editar").forEach((button) => {
   button.addEventListener("click", function () {
     const modal = document.getElementById("editModal");
