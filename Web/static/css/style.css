@@ -53,7 +53,7 @@ body {
     text-align: center;
     grid-column: 3;
     grid-row: 2;
-    color: #1b4f28;
+    color: #77d999;
     margin-left: 0rem;
     font-weight: 700;
 }
@@ -93,7 +93,7 @@ body {
 }
 
 .form input:focus {
-  border-color: #1a5319;
+  border-color: #77d999;
   box-shadow: 0 0 8px rgba(26, 83, 25, 0.4);
   background-color: #fff;
 }
@@ -115,14 +115,15 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
     color: white;
-    background-color: #1a5319;
+    background-color: #77d999;
     cursor: pointer;
     transition: all 0.3sease;
     margin-top: 2rem;
 }
 
 .form button:hover {
-  background-color: #144015;
+  background-color: #83da93;
+  transition: all .5s;
   box-shadow: 0 4px 8px rgba(26, 83, 25, 0.4);
 }
 
@@ -181,7 +182,7 @@ h3 {
   font-size: 1.5rem;
   margin-top: -30rem;
   margin-left: 6rem;
-  color: #1b4f28;
+  color: #77d999;
 }
 
 .form2 {
@@ -216,7 +217,7 @@ h3 {
 }
 
 .form2 input:focus {
-  border-color: #1a5319;
+  border-color: #77d999;
   box-shadow: 0 0 8px rgba(26, 83, 25, 0.4);
   background-color: #fff;
 }
@@ -238,14 +239,14 @@ h3 {
   font-size: 1.1rem;
   font-weight: bold;
   color: white;
-  background-color: #1a5319;
+  background-color: #77d999;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 2rem;
 }
 
 .form2 button:hover {
-  background-color: #144015;
+  background-color: #83da93;
   box-shadow: 0 4px 8px rgba(26, 83, 25, 0.4);
 }
 
@@ -267,7 +268,7 @@ h3 {
   font-size: 1.5rem;
   margin-top: -30rem;
   margin-left: 7rem;
-  color: #1b4f28;
+  color: #77d999;
 }
 
 .form3 {
@@ -314,7 +315,7 @@ h3 {
 }
 
 .form3 input:focus {
-  border-color: #1a5319;
+  border-color: #77d999;
   box-shadow: 0 0 8px rgba(26, 83, 25, 0.4);
   background-color: #fff;
 }
@@ -336,14 +337,14 @@ h3 {
   font-size: 1.1rem;
   font-weight: bold;
   color: white;
-  background-color: #1a5319;
+  background-color: #77d999;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 2rem;
 }
 
 .form3 button:hover {
-  background-color: #144015;
+  background-color: #83da93;
   box-shadow: 0 4px 8px rgba(26, 83, 25, 0.4);
 }
 
