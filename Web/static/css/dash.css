@@ -47,6 +47,7 @@ body {
   transition: background 0.3sease, transform 0.1sease-in-out;
   font-size: 0.9rem;
   margin-bottom: 15px;
+  font-weight: 700;
 }
 
 .icon-box {
