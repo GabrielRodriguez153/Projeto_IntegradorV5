@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch('/dados-grafico')
     .then(response => response.json())
     .then(data => {
-      // Atualize os labels e datasets do gráfico com os dados recebidos
       const ctx = document.getElementById('myChart').getContext('2d');
       const myChart = new Chart(ctx, {
         type: 'bar',
@@ -12,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             {
               type: 'bar',
               data: data.data, 
-              backgroundColor: '#1a5319'
+              backgroundColor: '#5bc781'
             },
           ]
         },

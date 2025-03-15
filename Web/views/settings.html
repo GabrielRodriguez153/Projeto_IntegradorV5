@@ -46,6 +46,88 @@
         <h2 class="card-title">Editar Perfil ✎</h2>
         <span class="box"></span>
       </div>
+
+      <form action="{{url_for('edit_perfil')}}" method="POST" class="fmr">
+        <div class="btn-grp">
+          <button type="submit" class="submit-button">
+            Salvar &nbsp;<i class="fa-solid fa-floppy-disk"></i>
+          </button>
+          <button class="logout-button">
+            <a href="{{url_for('logout')}}">
+            Sair &nbsp;<i class="fa-solid fa-power-off"></i>
+            </a>
+          </button>
+        </div>
+
+        <div class="form1">
+          <span class="form-title1">Dados Pessoais &nbsp;<i class="fa-solid fa-user"></i></span>
+          <div class="grupC">
+          <label>Nome Completo</label>
+           <input type="text" id="nome" name="nome" value="{{user_data.nome}}" />
+          </div>
+          <div class="grupC">
+           <label>Email</label>
+           <input type="email" id="email" name="email" value="{{user_data.email}}" />
+          </div>
+          <div class="grupB">
+           <label>Telefone</label>
+          <input type="text" id="telefone" name="telefone" value="{{user_data.telefone}}" />
+          </div>
+          <div class="grupB">
+          <label>Senha</label>
+          <input type="password" id="senha" name="senha" value="{{user_data.senha}}" />
+          </div>
+        </div>
+
+        <div class="form2">
+          <span class="form-title2">Dados do Endereço &nbsp;<i class="fa-solid fa-location-dot"></i></span>
+          <div class="grupC">
+            <label>Endereço</label>
+          <input type="text" id="logradouro" name="logradouro" value="{{user_data.endereco.logradouro}}">
+          </div>
+          <div class="grupC">
+            <label>Cidade</label>
+          <input type="text" id="cidade" name="cidade" value="{{user_data.endereco.cidade}}">
+          </div>
+          <div class="grupB">
+            <label>Estado</label>
+          <select id="estado" name="estado" value="{{user_data.endereco.estado}}">
+            <option value="">Estado</option>
+            <option value="Acre (AC)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Acre (AC)' else '' }}>Acre (AC)</option>
+            <option value="Alagoas (AL)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Alagoas (AL)' else '' }}>Alagoas (AL)</option>
+            <option value="Amapá (AP)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Amapá (AP)' else '' }}>Amapá (AP)</option>
+            <option value="Amazonas (AM)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Amazonas (AM)' else '' }}>Amazonas (AM)</option>
+            <option value="Bahia (BA)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Bahia (BA)' else '' }}>Bahia (BA)</option>
+            <option value="Ceará (CE)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Ceará (CE)' else '' }}>Ceará (CE)</option>
+            <option value="Distrito Federal (DF)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Distrito Federal (DF)' else '' }}>Distrito Federal (DF)</option>
+            <option value="Espírito Santo (ES)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Espírito Santo (ES)' else '' }}>Espírito Santo (ES)</option>
+            <option value="Goiás (GO)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Goiás (GO)' else '' }}>Goiás (GO)</option>
+            <option value="Maranhão (MA)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Maranhão (MA)' else '' }}>Maranhão (MA)</option>
+            <option value="Mato Grosso (MT)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Mato Grosso (MT)' else '' }}>Mato Grosso (MT)</option>
+            <option value="Mato Grosso do Sul (MS)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Mato Grosso do Sul (MS)' else '' }}>Mato Grosso do Sul (MS)</option>
+            <option value="Minas Gerais (MG)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Minas Gerais (MG)' else '' }}>Minas Gerais (MG)</option>
+            <option value="Pará (PA)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Pará (PA)' else '' }}>Pará (PA)</option>
+            <option value="Paraíba (PB)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Paraíba (PB)' else '' }}>Paraíba (PB)</option>
+            <option value="Paraná (PR)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Paraná (PR)' else '' }}>Paraná (PR)</option>
+            <option value="Pernambuco (PE)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Pernambuco (PE)' else '' }}>Pernambuco (PE)</option>
+            <option value="Piauí (PI)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Piauí (PI)' else '' }}>Piauí (PI)</option>
+            <option value="Rio de Janeiro (RJ)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Rio de Janeiro (RJ)' else '' }}>Rio de Janeiro (RJ)</option>
+            <option value="Rio Grande do Norte (RN)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Rio Grande do Norte (RN)' else '' }}>Rio Grande do Norte (RN)</option>
+            <option value="Rio Grande do Sul (RS)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Rio Grande do Sul (RS)' else '' }}>Rio Grande do Sul (RS)</option>
+            <option value="Rondônia (RO)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Rondônia (RO)' else '' }}>Rondônia (RO)</option>
+            <option value="Roraima (RR)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Roraima (RR)' else '' }}>Roraima (RR)</option>
+            <option value="Santa Catarina (SC)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Santa Catarina (SC)' else '' }}>Santa Catarina (SC)</option>
+            <option value="São Paulo (SP)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='São Paulo (SP)' else '' }}>São Paulo (SP)</option>
+            <option value="Sergipe (SE)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Sergipe (SE)' else '' }}>Sergipe (SE)</option>
+            <option value="Tocantins (TO)" {{ 'selected' if user_data and user_data.endereco and user_data.endereco.estado=='Tocantins (TO)' else '' }}>Tocantins (TO)</option>
+          </select>
+          </div>
+          <div class="grupB">
+            <label>CEP</label>
+          <input type="text" id="cep" name="cep" value="{{user_data.endereco.cep}}">
+          </div>
+        </div>
+      </form>
     </div>
   </div>
   <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>

@@ -84,28 +84,50 @@ def init_app(app):
             
         return render_template("main.html", user_name=user_name, user_id=user_id, total=total, 
                            nivel_severidade=nivel_severidade)
-    
-    @app.route('/settings')
-    def setting():
-        user_name = session.get('user_name')
-        user_id = session["user_id"] 
-
-        return render_template("settings.html", user_name=user_name, user_id=user_id)
 
     @app.route('/dashboard')
     def dash():
         user_name = session.get('user_name')
         user_id = session["user_id"]
+
+        selected_region = request.args.get('region', '')
         try:
-            grafico_dados = DadosService.get_dados_grafico() 
+            if selected_region:
+                total = DadosService.get_casos_recentes_by_region(selected_region) 
+                hectares_afetados = DadosService.get_hectares_afetados_by_region(selected_region)  
+                nivel_severidade = DadosService.get_nivel_severidade_mais_frequente_by_region(selected_region)
+                grafico_dados = DadosService.get_dados_grafico_by_region(selected_region) 
+            else:
+                total = DadosService.get_casos_recentes() 
+                hectares_afetados = DadosService.get_hectares_afetados()  
+                nivel_severidade = DadosService.get_nivel_severidade_mais_frequente()
+                grafico_dados = DadosService.get_dados_grafico() 
             
             regioes = {dado["_id"]: dado["totalPlantacoes"] for dado in grafico_dados}
 
         except Exception as e:
             grafico_dados = []
+            total = 0
+            hectares_afetados = 0
+            nivel_severidade = 'Indefinido'
+            regioes = {}
 
-        return render_template("dash.html", user_name=user_name, user_id=user_id, grafico_dados=grafico_dados, regioes=regioes)
+        return render_template("dash.html", user_name=user_name, user_id=user_id, grafico_dados=grafico_dados, regioes=regioes, total=total, 
+                           hectares_afetados=hectares_afetados,
+                           nivel_severidade=nivel_severidade)
 
+    @app.route('/settings')
+    def setting():
+        user_name = session.get('user_name')
+        user_id = session["user_id"] 
+
+        user_id = request.args.get('user_id') 
+        if not user_id:
+            user_id = session["user_id"]
+        user_data = SignUpService.get_user_by_id(user_id)
+        
+
+        return render_template("settings.html", user_name=user_name, user_id=user_id, user_data=user_data)
 
     @app.route('/dados-grafico', methods=['GET'])
     def dados_grafico():
@@ -121,7 +143,6 @@ def init_app(app):
         
         return render_template("dash.html", user_name=user_name, user_id=user_id)
     
-
     @app.route('/history', methods=['GET'])
     def history():
         user_name = session.get('user_name')
@@ -189,14 +210,6 @@ def init_app(app):
         except Exception as e:
             return redirect(url_for('history'))
     
-    @app.route('/perfil')
-    def perfil():
-        user_id = request.args.get('user_id') 
-        if not user_id:
-            user_id = session["user_id"]
-        user_data = SignUpService.get_user_by_id(user_id)
-        
-        return render_template('perfil.html', user_data=user_data)
     
     @app.route('/perfil/edit', methods=['GET', 'POST'])
     def edit_perfil():
@@ -245,7 +258,7 @@ def init_app(app):
 
         user_data = SignUpService.get_user_by_id(user_id)
 
-        return redirect(url_for('perfil'))
+        return redirect(url_for('setting'))
     
     @app.route('/notifications', methods=['GET'])
     def notifications():
