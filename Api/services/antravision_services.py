@@ -39,19 +39,19 @@ class SignUpService:
 
 class DadosService:
     
-    notifications_cache = []
+    # notifications_cache = []
     
-    @staticmethod
-    def save_notification(message):
-        DadosService.notifications_cache.append({"message": message, "timestamp": datetime.now().strftime("%d/%m/%Y %H:%M:%S")})
+    # @staticmethod
+    # def save_notification(message):
+    #     DadosService.notifications_cache.append({"message": message, "timestamp": datetime.now().strftime("%d/%m/%Y %H:%M:%S")})
 
-    @staticmethod
-    def get_notifications():
-        return DadosService.notifications_cache
+    # @staticmethod
+    # def get_notifications():
+    #     return DadosService.notifications_cache
 
-    @staticmethod
-    def clear_notifications():
-        DadosService.notifications_cache = []
+    # @staticmethod
+    # def clear_notifications():
+    #     DadosService.notifications_cache = []
     
     @staticmethod
     def get_casos_recentes():
@@ -61,60 +61,126 @@ class DadosService:
         except Exception as e:
             print(f"Erro ao obter casos recentes: {str(e)}")
             return 0
-    
+
+    @staticmethod
+    def get_casos_recentes_by_region(region):
+        try:
+            pipeline = [
+                {"$match": {"localizacao": region}},
+                {"$count": "total"}
+            ]
+            result = list(mongo.db.dados.aggregate(pipeline))
+            return result[0]["total"] if result else 0
+        except Exception as e:
+            print(f"Erro ao obter casos recentes por região: {str(e)}")
+            return 0
+
     @staticmethod
     def get_hectares_afetados():
         try:
-            
-            result = list(mongo.db.dados.aggregate([
+            pipeline = [
                 {
                     "$addFields": {
-                        "hectares_numeric": {
-                            "$toInt": "$hectares"  
-                        }
+                        "hectares_numeric": {"$toDouble": "$hectares"}
                     }
                 },
                 {
                     "$group": {
                         "_id": None,
-                        "total": {"$sum": "$hectares_numeric"}
+                        "totalHectares": {"$sum": "$hectares_numeric"}
                     }
                 }
-            ]))
-            
-        
-            if result and 'total' in result[0]:
-                return result[0]['total']
-            else:
-                return 0
+            ]
+            result = list(mongo.db.dados.aggregate(pipeline))
+            if result and 'totalHectares' in result[0]:
+                return result[0]['totalHectares']
+            return 0
         except Exception as e:
             print(f"Erro ao obter hectares afetados: {str(e)}")
             return 0
 
+    @staticmethod
+    def get_hectares_afetados_by_region(region):
+        try:
+            pipeline = [
+                {"$match": {"localizacao": region}},
+                {
+                    "$addFields": {
+                        "hectares_numeric": {"$toDouble": "$hectares"}
+                    }
+                },
+                {
+                    "$group": {
+                        "_id": None,
+                        "totalHectares": {"$sum": "$hectares_numeric"}
+                    }
+                }
+            ]
+            result = list(mongo.db.dados.aggregate(pipeline))
+            if result and 'totalHectares' in result[0]:
+                return result[0]['totalHectares']
+            return 0
+        except Exception as e:
+            print(f"Erro ao obter hectares afetados por região: {str(e)}")
+            return 0
 
     @staticmethod
     def get_nivel_severidade_mais_frequente():
         try:
-            result = list(mongo.db.dados.aggregate([
+            pipeline = [
                 {"$group": {"_id": "$nivelInfestacao", "count": {"$sum": 1}}},
                 {"$sort": {"count": -1}},
-            ]))
+                {"$limit": 1}
+            ]
+            result = list(mongo.db.dados.aggregate(pipeline))
             return result[0]['_id'] if result else "N/A"
         except Exception as e:
             print(f"Erro ao obter o nível de severidade mais frequente: {str(e)}")
             return "N/A"
-        
+
+    @staticmethod
+    def get_nivel_severidade_mais_frequente_by_region(region):
+        try:
+            pipeline = [
+                {"$match": {"localizacao": region}},
+                {"$group": {"_id": "$nivelInfestacao", "count": {"$sum": 1}}},
+                {"$sort": {"count": -1}},
+                {"$limit": 1}
+            ]
+            result = list(mongo.db.dados.aggregate(pipeline))
+            return result[0]['_id'] if result else "N/A"
+        except Exception as e:
+            print(f"Erro ao obter o nível de severidade por região: {str(e)}")
+            return "N/A"
+
     @staticmethod
     def get_dados_grafico():
         try:
-            result = list(mongo.db.dados.aggregate([
-                {"$group": {"_id": "$localizacao", "totalPlantacoes": {"$sum": 1}}},
+            pipeline = [
+                {"$group": {
+                    "_id": "$localizacao",
+                    "totalPlantacoes": {"$sum": 1}
+                }},
                 {"$sort": {"totalPlantacoes": -1}}
-            ]))
-
-            return result
+            ]
+            return list(mongo.db.dados.aggregate(pipeline))
         except Exception as e:
             print(f"Erro ao obter dados para o gráfico: {str(e)}")
+            return []
+
+    @staticmethod
+    def get_dados_grafico_by_region(region):
+        try:
+            pipeline = [
+                {"$match": {"localizacao": region}},
+                {"$group": {
+                    "_id": "$localizacao",
+                    "totalPlantacoes": {"$sum": 1}
+                }}
+            ]
+            return list(mongo.db.dados.aggregate(pipeline))
+        except Exception as e:
+            print(f"Erro ao obter dados para o gráfico por região: {str(e)}")
             return []
     
     @staticmethod

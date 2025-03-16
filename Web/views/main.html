@@ -32,7 +32,7 @@
           </div>
 
         <div class="navbar">
-            <div class="atualizar">Atualizar</div>
+            <button id="btnAtualizar" type="button" class="atualizar">Atualizar</button>
             <div class="user-section">
                 <span>Olá, {{ user_name }}</span>
                 <div id="user-info" data-user-id="{{user_id}}" style="display: none;"></div>
@@ -46,26 +46,26 @@
                 <h1 class="title">Bem-vindo ao AntraVision</h1>
                 <p class="subtitle">Sistema de Monitoramento de Antracnose</p>
                 <div class="info-bar">
-                    <span><i class="fa-solid fa-rotate fa-xl"></i><br>Última atualização: 25/02/2025 14:00</span>
+                    <h3 id="ultimaAtualizacao"><i class="fa-solid fa-rotate fa-xl"></i><br>Última atualização: <span class="valor">{{ ultima_atualizacao }}</span></h3>
                 </div>
                 <div class="cards">
                     <div class="card">
                         <h2>Resumo dos Status</h2>
                         <p>Média Geral entre os Casos</p>
-                        <h3><i class="fa-solid fa-triangle-exclamation"></i>{{ nivel_severidade }}</h3>
+                        <h3 id="statusGeral"><i class="fa-solid fa-triangle-exclamation"></i> <span class="valor">{{ nivel_severidade }}</span></h3>
                     </div>
                     <div class="card">
 
                         <h2>Total de Casos</h2>
                         <p>Total de Casos no Sistema</p>
-                        <h3><i class="fa-solid fa-file-contract fa-2xl"></i>{{ total }} Casos</h3>
+                        <h3 id="totalCasos"><i class="fa-solid fa-file-contract fa-2xl"></i><span class="valor">{{ total }} Casos</span></h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
-    <script src="{{url_for('static', filename='js/notifications.js')}}"></script>
+    <script src="{{url_for('static', filename='js/btnatualizar.js')}}"></script>
 
 
 </body>

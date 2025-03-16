@@ -124,6 +124,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  font-size: 17px;
   border-radius: 20px;
   cursor: pointer;
   font-weight: 700;
@@ -157,7 +159,7 @@ body {
   transition: transform 0.3s;
 }
 
-.info-bar span {
+.info-bar h3 {
   background-color: #79d998;
     padding: 0.5rem 1rem;
     border-radius: 4px;

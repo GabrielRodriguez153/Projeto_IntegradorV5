@@ -1,6 +1,7 @@
 from flask import render_template, request, redirect, url_for, flash, session, jsonify
 from bson import ObjectId
 from Api.services.antravision_services import SignUpService, DadosService
+from datetime import datetime
 
 
 def init_app(app):
@@ -75,46 +76,62 @@ def init_app(app):
     def main():
         user_name = session.get('user_name')
         user_id = session["user_id"]
-        try:
-            total = DadosService.get_casos_recentes() 
-            nivel_severidade = DadosService.get_nivel_severidade_mais_frequente()  
 
-        except Exception as e:
-            casos_recentes = 0
+        total = DadosService.get_casos_recentes() 
+        nivel_severidade = DadosService.get_nivel_severidade_mais_frequente()  
+        ultima_atualizacao = datetime.now().strftime("%d/%m/%Y %H:%M")
             
         return render_template("main.html", user_name=user_name, user_id=user_id, total=total, 
-                           nivel_severidade=nivel_severidade)
+                           nivel_severidade=nivel_severidade, ultima_atualizacao=ultima_atualizacao)
+    
+    @app.route('/api/home')
+    def home_data():
+        total = DadosService.get_casos_recentes() 
+        nivel_severidade = DadosService.get_nivel_severidade_mais_frequente()  
+        ultima_atualizacao = datetime.now().strftime("%d/%m/%Y %H:%M")
+
+        return jsonify({
+        "totalCasos": total,
+        "statusGeral": nivel_severidade,
+        "ultimaAtualizacao": ultima_atualizacao
+        })
+
+    @app.route('/api/data_by_region', methods=['GET'])
+    def data_by_region():
+        region = request.args.get('region', '')
+        try:
+            if region:
+                total = DadosService.get_casos_recentes_by_region(region)
+                hectares_afetados = DadosService.get_hectares_afetados_by_region(region)
+                nivel_severidade = DadosService.get_nivel_severidade_mais_frequente_by_region(region)
+                grafico_dados = DadosService.get_dados_grafico_by_region(region)
+            else:
+                total = DadosService.get_casos_recentes()
+                hectares_afetados = DadosService.get_hectares_afetados()
+                nivel_severidade = DadosService.get_nivel_severidade_mais_frequente()
+                grafico_dados = DadosService.get_dados_grafico()
+
+            data = {
+                "total": total,
+                "hectares_afetados": hectares_afetados,
+                "nivel_severidade": nivel_severidade,
+                "grafico_dados": grafico_dados
+            }
+            return jsonify(data)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
 
     @app.route('/dashboard')
     def dash():
         user_name = session.get('user_name')
         user_id = session["user_id"]
 
-        selected_region = request.args.get('region', '')
-        try:
-            if selected_region:
-                total = DadosService.get_casos_recentes_by_region(selected_region) 
-                hectares_afetados = DadosService.get_hectares_afetados_by_region(selected_region)  
-                nivel_severidade = DadosService.get_nivel_severidade_mais_frequente_by_region(selected_region)
-                grafico_dados = DadosService.get_dados_grafico_by_region(selected_region) 
-            else:
-                total = DadosService.get_casos_recentes() 
-                hectares_afetados = DadosService.get_hectares_afetados()  
-                nivel_severidade = DadosService.get_nivel_severidade_mais_frequente()
-                grafico_dados = DadosService.get_dados_grafico() 
-            
-            regioes = {dado["_id"]: dado["totalPlantacoes"] for dado in grafico_dados}
+        total = DadosService.get_casos_recentes()
+        hectares_afetados = DadosService.get_hectares_afetados()
+        nivel_severidade = DadosService.get_nivel_severidade_mais_frequente()
+        grafico_dados = DadosService.get_dados_grafico()
 
-        except Exception as e:
-            grafico_dados = []
-            total = 0
-            hectares_afetados = 0
-            nivel_severidade = 'Indefinido'
-            regioes = {}
-
-        return render_template("dash.html", user_name=user_name, user_id=user_id, grafico_dados=grafico_dados, regioes=regioes, total=total, 
-                           hectares_afetados=hectares_afetados,
-                           nivel_severidade=nivel_severidade)
+        return render_template("dash.html", user_name=user_name, user_id=user_id, total=total, hectares_afetados=hectares_afetados, nivel_severidade=nivel_severidade, grafico_dados=grafico_dados)
 
     @app.route('/settings')
     def setting():
