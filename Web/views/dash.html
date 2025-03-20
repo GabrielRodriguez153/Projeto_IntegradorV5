@@ -40,19 +40,19 @@
       </div>
     </div>
 
-  <div class="dash-content">
+    <div class="dash-content">
       <div class="filter-section">
         <form method="GET" action="{{url_for('data_by_region')}}" id="filterForm">
-        <label for="regionFilter">Filtrar por Região:</label>
-        <select id="regionFilter" name="region">
-          <option value="">Todas</option>
-          <option value="Região Norte">Região Norte</option>
-          <option value="Região Sul">Região Sul</option>
-          <option value="Região Leste">Região Leste</option>
-          <option value="Região Oeste">Região Oeste</option>
-          <option value="Região Central">Região Central</option>
-        </select>
-        <button id="applyFilter" class="btnFiltrar">Filtrar</button>
+          <label for="regionFilter">Filtrar por Região:</label>
+          <select id="regionFilter" name="region">
+            <option value="">Todas</option>
+            <option value="Região Norte">Região Norte</option>
+            <option value="Região Sul">Região Sul</option>
+            <option value="Região Leste">Região Leste</option>
+            <option value="Região Oeste">Região Oeste</option>
+            <option value="Região Central">Região Central</option>
+          </select>
+          <button id="applyFilter" class="btnFiltrar">Filtrar</button>
         </form>
       </div>
 
@@ -63,7 +63,10 @@
         </div>
         <div class="notifications">
           <h2>Notificações</h2>
-          <div class="place">Test</div>
+          <div class="area">
+            <ul id="notification-list"></ul>
+          </div>
+          <button id="clear-notifications">Limpar Notificações</button>
         </div>
       </div>
 
@@ -82,10 +85,11 @@
         </div>
       </div>
 
-  </div>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="{{url_for('static', filename='js/graph.js')}}"></script>
+<script src="{{ url_for('static', filename='js/notifications.js') }}"></script>
 <script src="https://kit.fontawesome.com/e25d89dd27.js" crossorigin="anonymous"></script>
 
 </html>

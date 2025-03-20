@@ -6,7 +6,7 @@ from datetime import datetime
 
 class SignUpService:
     
-    @staticmethod
+    @staticmethod 
     def add_user(user):
         user['endereco'] = {}
         result = mongo.db.signup.insert_one(user)
@@ -39,19 +39,19 @@ class SignUpService:
 
 class DadosService:
     
-    # notifications_cache = []
+    notifications_cache = []
     
-    # @staticmethod
-    # def save_notification(message):
-    #     DadosService.notifications_cache.append({"message": message, "timestamp": datetime.now().strftime("%d/%m/%Y %H:%M:%S")})
+    @staticmethod
+    def save_notification(message):
+        DadosService.notifications_cache.append({"message": message, "timestamp": datetime.now().strftime("%d/%m/%Y %H:%M")})
 
-    # @staticmethod
-    # def get_notifications():
-    #     return DadosService.notifications_cache
+    @staticmethod
+    def get_notifications():
+        return DadosService.notifications_cache
 
-    # @staticmethod
-    # def clear_notifications():
-    #     DadosService.notifications_cache = []
+    @staticmethod
+    def clear_notifications():
+        DadosService.notifications_cache = []
     
     @staticmethod
     def get_casos_recentes():
