@@ -25,11 +25,11 @@ Em nosso Projeto denominado Antravision, possuimos como objetivo desenvolver um 
 ## Como Instalar e Rodar o Projeto
 1. Clone este repositório:
    bash
-   git clone https://github.com/GabrielRodriguez153/Projeto_Integrador_V4.git
+   git clone https://github.com/GabrielRodriguez153/Projeto_IntegradorV5.git
    
 2. Navegue para o diretório do projeto:
    bash
-   cd Projeto_Integrador_V4
+   cd Projeto_IntegradorV5
    
 3. Instale as dependências listadas no arquivo requirements.txt:
    bash
